@@ -1,6 +1,146 @@
-@use "partials/fonts" as *;
 @use "partials/colors" as *;
+@use "partials/breakpoints" as *;
+@use "partials/mixins" as *;
 
-h1 {
-    font-family: "Avenir";
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    background-color: $primary-light;
+    color: $primary-dark;
+}
+
+
+
+.navigation {
+    background-color: $primary-dark;
+    text-align: center;
+
+    &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__link {
+        width: 50%;
+        text-decoration: none;
+
+    }
+
+    &__link--active {
+        border-bottom: solid $primary-light 2px;
+    }
+
+    &__heading {
+        color: $primary-light;
+        text-align: center;
+        @include paragraph;
+    }
+
+    &__heading--active {
+        font-weight: 600;
+    }
+}
+
+.hero {
+
+    &__container {
+        width: 100vw;
+        height: 15rem;
+        display: flex;
+
+
+    }
+
+    &__background-image {
+        background-image: url(../assets/images/hero-bio.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 15rem;
+    }
+
+    &__background-cover {
+        background-color: $primary-dark;
+        opacity: 50%;
+        width: 100vw;
+        height: 15rem;
+    }
+
+    &__heading {
+        color: $primary-light;
+        align-self: center;
+    }
+}
+
+
+.about {
+    margin: 0 1em;
+    @include paragraph;
+
+    &__heading {
+        @include heading;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__quote {
+        font-weight: 700;
+    }
+
+    &__subheading {
+        font-weight: 600;
+    }
+
+    &__text {}
+}
+
+.gallery {
+    margin: 0 1em;
+
+    &__heading {
+        @include heading;
+    }
+
+    &__image {
+        padding: 0.33rem 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.footer {
+    background-color: $primary-dark;
+    color: $primary-light;
+    @include paragraph;
+
+    &__card {}
+
+    &__heading {
+        @include heading;
+    }
+
+    &__link {}
+
+    &__icon {}
+
+    &__subheading {}
+
+    &__text {}
+
+
 }
