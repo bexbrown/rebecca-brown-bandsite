@@ -1,25 +1,14 @@
-@use "fonts" as *;
+@use "breakpoints" as *;
 
-
-/* Mobile Fonts */
-
-@mixin heading {
-    font-family: "Avenir";
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
 }
 
-@mixin subheading {
-    font-family: "Avenir";
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-}
 
-@mixin paragraph {
-    font-family: "Avenir";
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
 }
