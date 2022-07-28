@@ -189,18 +189,58 @@
     font-size: 13px;
     padding: 1.5rem 1rem 0.5rem 1rem;
 
+    @include tablet {
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
+    }
+
     &__card {
         margin-bottom: 1.5rem;
+
+        @include tablet {}
+    }
+
+    &__cards {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+        }
+    }
+
+    &__heading-card {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__heading {
+        @include tablet {
+            margin-right: 2rem;
+        }
     }
 
     &__copyright-card {
         display: flex;
         flex-direction: column;
+
+    }
+
+    &__icons {
+
+        @include tablet {
+            display: flex;
+            justify-self: flex-start;
+        }
     }
 
     &__icon {
         margin-right: 2rem;
         margin-top: 1em;
+
+        @include tablet {
+            margin-left: 0.5rem;
+        }
     }
 
     &__logo {
@@ -211,17 +251,40 @@
 
     &__logo--top {
         display: none;
+
+        @include tablet {
+            display: block;
+            margin-top: 0.75rem;
+        }
+
     }
+
+
 
     &__textbox {
         display: flex;
         flex-direction: column;
         margin: 1em 0;
+
+        @include tablet {
+            margin: 1rem 0;
+        }
+    }
+
+    &__logo--bottom {
+        @include tablet {
+            display: none;
+        }
     }
 
     &__copyright {
         font-size: 10px;
         line-height: 20px;
+
+        @include tablet {
+            font-size: 13px;
+            line-height: 18px;
+        }
     }
 
 }
