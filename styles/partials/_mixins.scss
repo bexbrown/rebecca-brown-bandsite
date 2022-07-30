@@ -10,5 +10,13 @@
 @mixin desktop {
     @media (min-width: $breakpoint-desktop) {
         @content;
+
+    }
+}
+
+@mixin contain {
+    @media (min-width: $breakpoint-desktop) {
+        max-width: 63.75rem;
+        margin: 0 auto;
     }
 }
