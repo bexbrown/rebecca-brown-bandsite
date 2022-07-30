@@ -1,5 +1,6 @@
 @use "breakpoints" as *;
 
+//media query mixins
 @mixin tablet {
     @media (min-width: $breakpoint-tablet) {
         @content;
@@ -20,6 +21,28 @@
     }
 }
 
-// @mixin flex-col {
+//flexbox mixins
+@mixin flex {
+    display: flex;
+}
 
-// }
+@mixin flex-wrap {
+    flex-wrap: wrap;
+}
+
+@mixin align-items-center {
+    align-items: center;
+}
+
+@mixin flex-direction-column {
+    flex-direction: column;
+}
+
+@mixin justify-content-space-between {
+    justify-content: space-between;
+}
+
+//display none mixin 
+@mixin display-none {
+    display: none;
+}

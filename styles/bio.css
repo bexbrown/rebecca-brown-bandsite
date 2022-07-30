@@ -4,13 +4,13 @@
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
-  font-weight: 600;
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
 }
 *,
 *::before,
@@ -29,6 +29,14 @@ body {
   color: #323232;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 24px;
   line-height: 32px;
@@ -40,12 +48,6 @@ h1 {
     line-height: 68px;
     font-weight: 600;
   }
-}
-
-nav {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
 }
 
 h2 {
@@ -73,6 +75,12 @@ h3 {
     font-weight: 600;
   }
 }
+h4 {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
 p {
   font-size: 13px;
   line-height: 18px;
@@ -84,22 +92,22 @@ p {
     line-height: 22px;
   }
 }
-footer {
+nav {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+header {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  footer {
+  header {
     font-size: 14px;
     line-height: 20px;
   }
-}
-
-h4 {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
 }
 
 .navigation {
@@ -121,7 +129,6 @@ h4 {
 }
 .navigation__list {
   margin-top: 0.5rem;
-  list-style: none;
   display: flex;
 }
 .navigation__heading {
@@ -140,7 +147,6 @@ h4 {
 }
 .navigation__link {
   color: #FFFFFF;
-  text-decoration: none;
 }
 @media (min-width: 768px) {
   .navigation__link {
@@ -161,7 +167,6 @@ h4 {
 }
 .hero__background-cover {
   background-color: rgba(50, 50, 50, 0.5);
-  width: 100%;
   height: 50vw;
   display: flex;
   align-items: center;
@@ -229,34 +234,23 @@ h4 {
 }
 @media (min-width: 768px) {
   .about__image {
-    width: 100%;
     height: 45vw;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: bottom;
-       object-position: bottom;
   }
 }
 @media (min-width: 1280px) {
   .about__image {
-    width: 100%;
     height: 40vw;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: bottom;
-       object-position: bottom;
   }
 }
 .about__quote {
+  display: block;
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  display: block;
 }
 @media (min-width: 768px) {
   .about__quote {
     font-size: 1.25rem;
-    font-weight: 600;
     padding: 1rem 0;
     line-height: 1.5em;
   }
@@ -290,16 +284,11 @@ h4 {
     justify-content: space-between;
   }
 }
-@media (min-width: 1280px) {
-  .about__textbox {
-    justify-content: space-between;
-  }
-}
-.about__text {
+.about__textbox__text {
   margin-top: 1em;
 }
 @media (min-width: 768px) {
-  .about__text {
+  .about__textbox__text {
     width: 50%;
     padding-right: 1em;
   }
@@ -345,7 +334,6 @@ h4 {
 .footer {
   background-color: #323232;
   color: #FFFFFF;
-  font-size: 13px;
   padding: 1.5rem 1rem 0.5rem 1rem;
 }
 @media (min-width: 768px) {
@@ -387,7 +375,6 @@ h4 {
 @media (min-width: 768px) {
   .footer__icons {
     display: flex;
-    justify-self: flex-start;
   }
 }
 .footer__icon {

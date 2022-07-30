@@ -14,11 +14,6 @@ h1 {
     }
 }
 
-nav {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-}
 
 h2 {
     font-size: 24px;
@@ -53,6 +48,12 @@ h3 {
     }
 }
 
+h4 {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+}
+
 p {
     font-size: 13px;
     line-height: 18px;
@@ -68,7 +69,13 @@ p {
     }
 }
 
-footer {
+nav {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+header {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
@@ -77,10 +84,4 @@ footer {
         font-size: 14px;
         line-height: 20px;
     }
-}
-
-h4 {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 600;
 }
