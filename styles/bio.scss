@@ -2,6 +2,7 @@
 @use "partials/colors" as *;
 @use "partials/breakpoints" as *;
 @use "partials/mixins" as *;
+@use "partials/typography" as *;
 
 .navigation {
     background-color: $primary-dark;
@@ -38,7 +39,7 @@
 
     &__heading--active {
         font-weight: 600;
-        border-bottom: solid $primary-light 2px;
+        border-bottom: solid $primary-light 3px;
     }
 
     &__link {
@@ -46,7 +47,6 @@
         text-decoration: none;
 
         @include tablet {
-            margin: 0;
             padding-bottom: 1.5rem;
         }
     }
@@ -104,6 +104,10 @@
             padding-left: 2rem;
         }
 
+        @include desktop {
+            margin: 1rem 0 2.5rem 0;
+        }
+
     }
 
     &__container {
@@ -136,7 +140,7 @@
     &__quote {
         font-size: 14px;
         line-height: 22px;
-        font-weight: 700;
+        font-weight: 600;
         display: block;
 
         @include tablet {
@@ -163,11 +167,17 @@
     &__subheading {
         font-weight: 600;
         margin-top: 1rem;
+
+        @include desktop {
+            margin-bottom: 1rem;
+        }
     }
 
     &__textbox {
+
         @include tablet {
             display: flex;
+            justify-content: space-between;
         }
 
         @include desktop {
@@ -180,10 +190,7 @@
 
         @include tablet {
             width: 50%;
-        }
-
-        @include desktop {
-            width: 48%;
+            padding-right: 1em;
         }
     }
 }

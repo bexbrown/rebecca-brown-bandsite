@@ -6,7 +6,6 @@
     }
 }
 
-
 @mixin desktop {
     @media (min-width: $breakpoint-desktop) {
         @content;
@@ -20,3 +19,7 @@
         margin: 0 auto;
     }
 }
+
+// @mixin flex-col {
+
+// }

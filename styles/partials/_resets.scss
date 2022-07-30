@@ -10,99 +10,11 @@
 
 * {
     margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: "Avenir";
-    width: 100vw;
+    font-family: $font-stack;
+    width: 100%;
     background-color: $primary-light;
     color: $primary-dark;
-}
-
-h1 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-
-    @include tablet {
-        font-size: 60px;
-        line-height: 68px;
-        font-weight: 600;
-    }
-
-    @include desktop {
-        @include tablet;
-    }
-}
-
-nav {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-}
-
-h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-
-    @include tablet {
-        font-size: 36px;
-        line-height: 44px;
-        font-weight: 600;
-    }
-
-    @include desktop {
-        @include tablet;
-    }
-}
-
-h3 {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    color: $secondary-dark;
-
-    @include tablet {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 600;
-    }
-
-    @include desktop {
-        @include tablet;
-    }
-}
-
-p {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-
-    @include tablet {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    @include desktop {
-        @include tablet;
-    }
-}
-
-footer {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-
-    @include tablet {
-        font-size: 14px;
-        line-height: 20px;
-    }
-}
-
-h4 {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 600;
 }
