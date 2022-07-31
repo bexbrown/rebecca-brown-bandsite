@@ -137,6 +137,18 @@ h4 {
     margin: 0 auto;
   }
 }
+.navigation__link {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .navigation__link {
+    padding-bottom: 1.5rem;
+  }
+}
+.navigation__logo {
+  margin-top: 1.5rem;
+  width: 7.5rem;
+}
 .navigation__list {
   margin-top: 0.5rem;
   padding: 0rem;
@@ -152,21 +164,12 @@ h4 {
     margin-left: 3rem;
   }
 }
+.navigation__heading:hover {
+  font-weight: 600;
+}
 .navigation__heading--active {
   font-weight: 600;
   border-bottom: solid #FFFFFF 3px;
-}
-.navigation__link {
-  color: #FFFFFF;
-}
-@media (min-width: 768px) {
-  .navigation__link {
-    padding-bottom: 1.5rem;
-  }
-}
-.navigation__logo {
-  margin-top: 1.5rem;
-  width: 7.5rem;
 }
 
 .hero__background-image {
@@ -340,6 +343,7 @@ h4 {
   padding: 0.33rem 0;
   width: 100%;
   height: auto;
+  filter: grayscale(1);
 }
 @media (min-width: 768px) {
   .gallery__image {
@@ -351,6 +355,9 @@ h4 {
   .gallery__image {
     width: 31.5%;
   }
+}
+.gallery__image:hover {
+  filter: grayscale(0);
 }
 
 .footer {
@@ -378,23 +385,6 @@ h4 {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
-  .footer__subheading {
-    font-size: 0.9rem;
-  }
-}
-@media (min-width: 768px) {
-  .footer__cards {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-  }
-}
-@media (min-width: 1280px) {
-  .footer__cards {
-    width: 70%;
-  }
-}
-@media (min-width: 768px) {
   .footer__heading-card {
     display: flex;
     justify-content: space-between;
@@ -407,10 +397,6 @@ h4 {
   .footer__heading {
     margin-right: 2rem;
   }
-}
-.footer__copyright-card {
-  display: flex;
-  flex-direction: column;
 }
 @media (min-width: 768px) {
   .footer__icons {
@@ -440,6 +426,28 @@ h4 {
     margin-top: 0.75rem;
   }
 }
+@media (min-width: 768px) {
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .footer__cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__cards {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .footer__subheading {
+    font-size: 0.9rem;
+  }
+}
 .footer__textbox {
   display: flex;
   flex-direction: column;
@@ -450,10 +458,12 @@ h4 {
     margin: 1rem 0;
   }
 }
-@media (min-width: 768px) {
-  .footer__logo--bottom {
-    display: none;
-  }
+.footer__email {
+  color: #FFFFFF;
+}
+.footer__copyright-card {
+  display: flex;
+  flex-direction: column;
 }
 .footer__copyright {
   font-size: 0.7rem;

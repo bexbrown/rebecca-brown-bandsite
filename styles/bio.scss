@@ -20,6 +20,19 @@
         }
     }
 
+    &__link {
+        color: $primary-light;
+
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__logo {
+        margin-top: 1.5rem;
+        width: 7.5rem;
+    }
+
     &__list {
         margin-top: 0.5rem;
         padding: 0rem;
@@ -34,25 +47,15 @@
             padding: 1rem 0 1.75rem;
             margin-left: 3rem;
         }
+    }
 
+    &__heading:hover {
+        font-weight: 600;
     }
 
     &__heading--active {
         font-weight: 600;
         border-bottom: solid $primary-light 3px;
-    }
-
-    &__link {
-        color: $primary-light;
-
-        @include tablet {
-            padding-bottom: 1.5rem;
-        }
-    }
-
-    &__logo {
-        margin-top: 1.5rem;
-        width: 7.5rem;
     }
 }
 
@@ -218,18 +221,24 @@
         padding: 0.33rem 0;
         width: 100%;
         height: auto;
+        filter: grayscale(1);
 
         @include tablet {
             padding: 0.75rem 0;
             width: 31%;
-            // padding: 0 0.5rem;
         }
 
         @include desktop {
             width: 31.5%;
         }
     }
+
+    &__image:hover {
+        filter: grayscale(0);
+    }
 }
+
+
 
 .footer {
     background-color: $primary-dark;
@@ -254,25 +263,6 @@
         margin-bottom: 1.5rem;
     }
 
-    &__subheading {
-        @include tablet {
-            font-size: 0.9rem;
-        }
-    }
-
-    &__cards {
-        @include tablet {
-            @include flex;
-            @include justify-content-space-between;
-            margin: 1rem 0;
-        }
-
-        @include desktop {
-            width: 70%;
-        }
-
-    }
-
     &__heading-card {
         @include tablet {
             @include flex;
@@ -286,11 +276,6 @@
         @include tablet {
             margin-right: 2rem;
         }
-    }
-
-    &__copyright-card {
-        @include flex;
-        @include flex-direction-column;
     }
 
     &__icons {
@@ -324,6 +309,31 @@
         }
     }
 
+    &__logo--bottom {
+        @include tablet {
+            @include display-none;
+        }
+    }
+
+    &__cards {
+        @include tablet {
+            @include flex;
+            @include justify-content-space-between;
+            margin: 1rem 0;
+        }
+
+        @include desktop {
+            width: 70%;
+        }
+
+    }
+
+    &__subheading {
+        @include tablet {
+            font-size: 0.9rem;
+        }
+    }
+
     &__textbox {
         @include flex;
         @include flex-direction-column;
@@ -334,10 +344,13 @@
         }
     }
 
-    &__logo--bottom {
-        @include tablet {
-            @include display-none;
-        }
+    &__email {
+        color: $primary-light;
+    }
+
+    &__copyright-card {
+        @include flex;
+        @include flex-direction-column;
     }
 
     &__copyright {
