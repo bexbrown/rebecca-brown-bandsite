@@ -38,76 +38,86 @@ a {
 }
 
 h1 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: 60px;
-    line-height: 68px;
-    font-weight: 600;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   h2 {
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
+
 h3 {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
   font-weight: 600;
   color: #000000;
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
-}
-h4 {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
 }
 
 p {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   p {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
   }
 }
+
 nav {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
   font-weight: 400;
 }
 
 header {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   header {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
   }
+}
+
+footer {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+h4 {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 600;
 }
 
 .navigation {
@@ -129,6 +139,7 @@ header {
 }
 .navigation__list {
   margin-top: 0.5rem;
+  padding: 0rem;
   display: flex;
 }
 .navigation__heading {
@@ -163,11 +174,11 @@ header {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 50vw;
+  height: 55vw;
 }
 .hero__background-cover {
   background-color: rgba(50, 50, 50, 0.5);
-  height: 50vw;
+  height: 55vw;
   display: flex;
   align-items: center;
 }
@@ -212,6 +223,7 @@ header {
 @media (min-width: 768px) {
   .about__heading {
     padding-left: 2rem;
+    margin: 1.5rem 0rem;
   }
 }
 @media (min-width: 1280px) {
@@ -231,6 +243,7 @@ header {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
   .about__image {
@@ -239,13 +252,13 @@ header {
 }
 @media (min-width: 1280px) {
   .about__image {
-    height: 40vw;
+    height: 37vw;
   }
 }
 .about__quote {
   display: block;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
@@ -257,7 +270,8 @@ header {
 }
 @media (min-width: 1280px) {
   .about__quote {
-    width: 70%;
+    width: 83%;
+    font-size: 1.5rem;
   }
 }
 .about__quote-name {
@@ -270,11 +284,13 @@ header {
   }
 }
 .about__subheading {
+  font-size: 0.9rem;
   font-weight: 600;
   margin-top: 1rem;
 }
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .about__subheading {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 }
@@ -284,13 +300,13 @@ header {
     justify-content: space-between;
   }
 }
-.about__textbox__text {
-  margin-top: 1em;
+.about__text {
+  padding: 0.5rem 0;
 }
 @media (min-width: 768px) {
-  .about__textbox__text {
-    width: 50%;
-    padding-right: 1em;
+  .about__text {
+    width: 48%;
+    font-size: 0.9rem;
   }
 }
 
@@ -316,6 +332,8 @@ header {
   .gallery__images {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 .gallery__image {
@@ -325,9 +343,13 @@ header {
 }
 @media (min-width: 768px) {
   .gallery__image {
-    margin: 0 0 1rem 0;
-    width: 33.33%;
-    padding: 0 0.5rem;
+    padding: 0.75rem 0;
+    width: 31%;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__image {
+    width: 31.5%;
   }
 }
 
@@ -338,7 +360,12 @@ header {
 }
 @media (min-width: 768px) {
   .footer {
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    padding: 2.5rem 2.5rem 0.5rem 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding-bottom: 2rem;
   }
 }
 @media (min-width: 1280px) and (min-width: 1280px) {
@@ -351,10 +378,20 @@ header {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
+  .footer__subheading {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 768px) {
   .footer__cards {
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__cards {
+    width: 70%;
   }
 }
 @media (min-width: 768px) {
@@ -362,6 +399,9 @@ header {
     display: flex;
     justify-content: space-between;
   }
+}
+.footer__heading {
+  padding: 0.5rem 0;
 }
 @media (min-width: 768px) {
   .footer__heading {
@@ -375,6 +415,7 @@ header {
 @media (min-width: 768px) {
   .footer__icons {
     display: flex;
+    align-items: center;
   }
 }
 .footer__icon {
@@ -415,12 +456,10 @@ header {
   }
 }
 .footer__copyright {
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 0.7rem;
 }
 @media (min-width: 768px) {
   .footer__copyright {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=bio.css.map */

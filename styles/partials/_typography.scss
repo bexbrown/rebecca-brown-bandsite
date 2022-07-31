@@ -3,85 +3,79 @@
 @use "colors.scss" as *;
 
 h1 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 600;
 
     @include tablet {
-        font-size: 60px;
-        line-height: 68px;
-        font-weight: 600;
+        font-size: 3.75rem;
+        line-height: 4.25rem;
     }
 }
 
 
 h2 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
     font-weight: 600;
 
     @include tablet {
-        font-size: 36px;
-        line-height: 44px;
-        font-weight: 600;
-    }
-
-    @include desktop {
-        @include tablet;
+        font-size: 2.25rem;
+        line-height: 2.75rem;
     }
 }
 
 h3 {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
     font-weight: 600;
     color: $secondary-dark;
 
     @include tablet {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
-
-    @include desktop {
-        @include tablet;
-    }
-}
-
-h4 {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 600;
 }
 
 p {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
     font-weight: 400;
 
     @include tablet {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    @include desktop {
-        @include tablet;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
     }
 }
 
 nav {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
     font-weight: 400;
 }
 
 header {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
     font-weight: 400;
 
     @include tablet {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 0.8rem;
+        line-height: 1.25rem;
     }
+}
+
+footer {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    font-weight: 400;
+
+    @include tablet {
+        font-size: 0.9rem;
+    }
+}
+
+h4 {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    font-weight: 600;
 }
