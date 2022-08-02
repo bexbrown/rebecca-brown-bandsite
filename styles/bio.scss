@@ -4,91 +4,54 @@
 @use "partials/mixins" as *;
 @use "partials/typography" as *;
 
-.navigation {
-    background-color: $primary-dark;
-    text-align: center;
-
-    &__container {
-        @include tablet {
-            @include flex;
-            @include align-items-center;
-            padding: 0 2rem;
-        }
-
-        @include desktop {
-            @include contain;
-        }
-    }
-
-    &__link {
-        color: $primary-light;
-
-        @include tablet {
-            padding-bottom: 1.5rem;
-        }
-    }
-
-    &__logo {
-        margin-top: 1.5rem;
-        width: 7.5rem;
-    }
-
-    &__list {
-        margin-top: 0.5rem;
-        padding: 0rem;
-        @include flex;
-    }
-
-    &__heading {
-        width: 50%;
-        padding-bottom: 0.5rem;
-
-        @include tablet {
-            padding: 1rem 0 1.75rem;
-            margin-left: 3rem;
-        }
-    }
-
-    &__heading:hover {
-        font-weight: 600;
-    }
-
-    &__heading--active {
-        font-weight: 600;
-        border-bottom: solid $primary-light 3px;
-    }
-}
 
 .hero {
     &__background-image {
         background-image: url(../assets/images/hero-bio.jpg);
-        background-position: center;
-        background-size: cover;
-        width: 100%;
         height: 55vw;
+        @include hero-bg-image;
     }
 
     &__background-cover {
-        background-color: rgba(50, 50, 50, 0.5);
         height: 55vw;
-        @include flex;
-        @include align-items-center;
+        @include hero-bg-cover;
     }
 
     &__heading {
-        color: $primary-light;
-        padding-left: 1rem;
-
-        @include tablet {
-            padding-left: 2rem;
-        }
-
-        @include desktop {
-            width: 63.75rem;
-            @include contain;
-        }
+        @include hero-heading;
     }
 }
+
+// .hero {
+//     &__background-image {
+//         background-image: url(../assets/images/hero-bio.jpg);
+//         background-position: center;
+//         background-size: cover;
+//         width: 100%;
+//         height: 55vw;
+//     }
+
+//     &__background-cover {
+//         background-color: rgba(50, 50, 50, 0.5);
+//         height: 55vw;
+//         @include flex;
+//         @include align-items-center;
+//     }
+
+//     &__heading {
+//         color: $primary-light;
+//         padding-left: 1rem;
+
+//         @include tablet {
+//             padding-left: 2rem;
+//         }
+
+//         @include desktop {
+//             width: 63.75rem;
+//             @include contain;
+//         }
+//     }
+// }
 
 .about {
     padding: 1.5rem 1rem;
@@ -233,129 +196,5 @@
 
     &__image:hover {
         filter: grayscale(0);
-    }
-}
-
-
-
-.footer {
-    background-color: $primary-dark;
-    color: $primary-light;
-    padding: 1.5rem 1rem 0.5rem 1rem;
-
-    @include tablet {
-        padding: 2.5rem 2.5rem 0.5rem 2.5rem;
-    }
-
-    @include desktop {
-        padding-bottom: 2rem;
-    }
-
-    &__card-container {
-        @include desktop {
-            @include contain;
-        }
-    }
-
-    &__card {
-        margin-bottom: 1.5rem;
-    }
-
-    &__heading-card {
-        @include tablet {
-            @include flex;
-            @include justify-content-space-between;
-        }
-    }
-
-    &__heading {
-        padding: 0.5rem 0;
-
-        @include tablet {
-            margin-right: 2rem;
-        }
-    }
-
-    &__icons {
-
-        @include tablet {
-            @include flex;
-            @include align-items-center;
-        }
-    }
-
-    &__icon {
-        margin-right: 2rem;
-        margin-top: 1em;
-
-        @include tablet {
-            margin-left: 0.5rem;
-        }
-    }
-
-    &__logo {
-        width: 7.5rem;
-        margin: 2rem 0 1rem 0;
-    }
-
-    &__logo--top {
-        @include display-none;
-
-        @include tablet {
-            display: block;
-            margin-top: 0.75rem;
-        }
-    }
-
-    &__logo--bottom {
-        @include tablet {
-            @include display-none;
-        }
-    }
-
-    &__cards {
-        @include tablet {
-            @include flex;
-            @include justify-content-space-between;
-            margin: 1rem 0;
-        }
-
-        @include desktop {
-            width: 70%;
-        }
-
-    }
-
-    &__subheading {
-        @include tablet {
-            font-size: 0.9rem;
-        }
-    }
-
-    &__textbox {
-        @include flex;
-        @include flex-direction-column;
-        margin: 1em 0;
-
-        @include tablet {
-            margin: 1rem 0;
-        }
-    }
-
-    &__email {
-        color: $primary-light;
-    }
-
-    &__copyright-card {
-        @include flex;
-        @include flex-direction-column;
-    }
-
-    &__copyright {
-        font-size: 0.7rem;
-
-        @include tablet {
-            font-size: 0.9rem;
-        }
     }
 }
