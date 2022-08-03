@@ -1,0 +1,62 @@
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+.navigation {
+    background-color: $primary-dark;
+    text-align: center;
+
+    &__container {
+        @include tablet {
+            @include flex;
+            @include align-items-center;
+            padding: 0 2rem;
+        }
+
+        @include desktop {
+            @include contain;
+        }
+    }
+
+    &__link {
+        color: $primary-light;
+
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__logo {
+        margin-top: 1.5rem;
+        width: 7.5rem;
+    }
+
+    &__list {
+        margin-top: 0.5rem;
+        padding: 0rem;
+        @include flex;
+    }
+
+    &__heading {
+        width: 50%;
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+            padding: 1rem 0 1.75rem;
+            margin-left: 3rem;
+        }
+    }
+
+    &__heading:hover {
+        font-weight: 600;
+        border-bottom: solid $primary-light 3px;
+
+    }
+
+    &__heading--active {
+        font-weight: 600;
+        border-bottom: solid $primary-light 3px;
+    }
+}

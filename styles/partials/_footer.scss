@@ -1,8 +1,8 @@
-@use "partials/resets" as *;
-@use "partials/colors" as *;
-@use "partials/breakpoints" as *;
-@use "partials/mixins" as *;
-@use "partials/typography" as *;
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
 
 .footer {
     background-color: $primary-dark;

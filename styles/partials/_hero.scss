@@ -1,0 +1,19 @@
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+.hero {
+    &__background-image {
+        @include hero-bg-image;
+    }
+
+    &__background-cover {
+        @include hero-bg-cover;
+    }
+
+    &__heading {
+        @include hero-heading;
+    }
+}

@@ -1,0 +1,105 @@
+@use "./partials/navigation" as *;
+@use "./partials/hero" as *;
+@use "./partials/footer" as *;
+@use "./partials/resets" as *;
+@use "./partials/colors" as *;
+@use "./partials/breakpoints" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+
+.hero {
+    &__background-image {
+        background-image: url(../assets/images/hero-shows.jpg);
+        height: 75vw;
+    }
+
+    &__background-cover {
+        height: 75vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__album {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        font-weight: 600;
+        color: $primary-light;
+
+        @include tablet {
+            padding-left: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.shows {
+    padding: 2rem 0;
+    @include flex;
+    @include flex-direction-column;
+
+    &__header {
+        padding: 0 1rem;
+    }
+
+    &__card {
+        border-bottom: 2px solid $primary-medium;
+        padding: 0 1rem;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__subheader {
+        text-transform: uppercase;
+        color: $primary-medium;
+        font-size: 0.6rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+
+        @include tablet {
+            font-size: 0.75rem;
+        }
+    }
+
+    &__subheader--row {
+        display: none;
+
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__subheader--col {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__td {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-weight: 700;
+    }
+
+    &__button {
+        @include button;
+    }
+
+    &__button:hover {
+        @include button-hover;
+    }
+
+}

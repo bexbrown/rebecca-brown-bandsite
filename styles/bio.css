@@ -120,17 +120,66 @@ h4 {
   font-weight: 600;
 }
 
+.navigation {
+  background-color: #323232;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .navigation__container {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+  }
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .navigation__container {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+.navigation__link {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .navigation__link {
+    padding-bottom: 1.5rem;
+  }
+}
+.navigation__logo {
+  margin-top: 1.5rem;
+  width: 7.5rem;
+}
+.navigation__list {
+  margin-top: 0.5rem;
+  padding: 0rem;
+  display: flex;
+}
+.navigation__heading {
+  width: 50%;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .navigation__heading {
+    padding: 1rem 0 1.75rem;
+    margin-left: 3rem;
+  }
+}
+.navigation__heading:hover {
+  font-weight: 600;
+  border-bottom: solid #FFFFFF 3px;
+}
+.navigation__heading--active {
+  font-weight: 600;
+  border-bottom: solid #FFFFFF 3px;
+}
+
 .hero__background-image {
-  background-image: url(../assets/images/hero-bio.jpg);
-  height: 55vw;
   background-position: center;
   background-size: cover;
   width: 100%;
 }
 .hero__background-cover {
-  height: 55vw;
   background-color: rgba(50, 50, 50, 0.5);
-  height: 55vw;
   display: flex;
   align-items: center;
 }
@@ -153,6 +202,128 @@ h4 {
     max-width: 63.75rem;
     margin: 0 auto;
   }
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.5rem 2.5rem 0.5rem 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .footer__card-container {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+.footer__card {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer__heading-card {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer__heading {
+  padding: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .footer__heading {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__icons {
+    display: flex;
+    align-items: center;
+  }
+}
+.footer__icon {
+  margin-right: 2rem;
+  margin-top: 1em;
+}
+@media (min-width: 768px) {
+  .footer__icon {
+    margin-left: 0.5rem;
+  }
+}
+.footer__logo {
+  width: 7.5rem;
+  margin: 2rem 0 1rem 0;
+}
+.footer__logo--top {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__logo--top {
+    display: block;
+    margin-top: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .footer__cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__cards {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .footer__subheading {
+    font-size: 0.9rem;
+  }
+}
+.footer__textbox {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+@media (min-width: 768px) {
+  .footer__textbox {
+    margin: 1rem 0;
+  }
+}
+.footer__email {
+  color: #FFFFFF;
+}
+.footer__copyright-card {
+  display: flex;
+  flex-direction: column;
+}
+.footer__copyright {
+  font-size: 0.7rem;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    font-size: 0.9rem;
+  }
+}
+
+.hero__background-image {
+  background-image: url(../assets/images/hero-bio.jpg);
+  height: 55vw;
+}
+.hero__background-cover {
+  height: 55vw;
 }
 
 .about {
@@ -307,4 +478,100 @@ h4 {
 }
 .gallery__image:hover {
   filter: grayscale(0);
+}
+
+.comments {
+  margin: 0 1rem;
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .comments {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+.comments__main {
+  display: flex;
+}
+@media (min-width: 1280px) {
+  .comments__main {
+    width: 30rem;
+  }
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .comments__main {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+.comments__image-main {
+  background-image: url(../assets/images/Mohan-muruge.jpg);
+  height: 2.25rem;
+  width: 2.25rem;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 1.25rem 1rem 0 0;
+  background-color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .comments__image-main {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.comments__form {
+  width: 100%;
+}
+.comments__label {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-size: 0.6rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .comments__label {
+    font-size: 0.75rem;
+  }
+}
+.comments__form-field {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin: 0.025rem 0;
+  border: 1px solid #E1E1E1;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .comments__form-field {
+    height: 3rem;
+    padding: 1rem;
+  }
+}
+.comments__form-field:active {
+  border: 1px solid #323232;
+}
+.comments__button {
+  display: block;
+  color: #FFFFFF;
+  background-color: #323232;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 100%;
+  height: 2.5rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .comments__button {
+    width: 10rem;
+    padding: 0rem 2rem;
+  }
+}
+.comments__button:hover {
+  background-color: #000000;
 }/*# sourceMappingURL=bio.css.map */

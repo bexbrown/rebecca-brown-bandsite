@@ -7,10 +7,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shows</title>
     <link rel="stylesheet" href="../styles/shows.css">
-    <link rel="stylesheet" href="../styles/global.css">
 </head>
 
 <body>
+
+
+    <header>
+        <nav class="navigation">
+            <div class="navigation__container">
+                <a href="./index.html" class="navigation__link">
+                    <img src="../assets/logos/Logo-bandsite.svg" alt="Bandsite logo" class="navigation__logo">
+                </a>
+                <ul class="navigation__list">
+                    <li class="navigation__heading navigation__heading">
+                        <a href="../index.html" class="navigation__link">Biography</a>
+                    </li>
+                    <li class="navigation__heading navigation__heading--active">
+                        <a href="./shows.html" class="navigation__link">Shows</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <section class="hero">
+            <div class="hero__background-image">
+                <div class="hero__background-cover">
+                    <span class="hero__album">Beautiful Beasts Album</span>
+                    <h1 class="hero__heading">Queen of Yellow x For The Stings</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shows Section *** to be added with JS-->
+        <section class="shows">
+            <h2 class="shows__header">Shows</h2>
+            <div class="shows__card">
+
+                <table class="shows__table">
+                    <tr class="shows__row">
+                        <td class="shows__subheader shows__subheader--row">Date</td>
+                        <td class="shows__subheader shows__subheader--row">Venue</td>
+                        <td class="shows__subheader shows__subheader--row">Location</td>
+                        <td class="shows__subheader shows__subheader--row"></td>
+                    </tr>
+                    <tr class="shows__row">
+                        <td class="shows__subheader shows__subheader--col">Date</td>
+                        <td class="shows__td shows__date">Monday Sept 6 2021</td>
+                        <td class="shows__subheader shows__subheader--col">Venue</td>
+                        <td class="shows__td">Ronald Lane</td>
+                        <td class="shows__subheader shows__subheader--col">Location</td>
+                        <td class="shows__td">San Francisco, CA</td>
+                        <td class="shows__td">
+                            <span class="shows__button">
+                                <a class="shows__link">Buy Tickets</a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- table for mobile  -->
+
+                <!-- </table>
+                <div class="shows__text-row">
+                    <div class="shows__textbox">
+                        <span class="shows__subheader shows__subheader--col">Date</span>
+                        <span class="shows__text shows__date">Mon Sept 6 2021</span>
+                    </div>
+                    <div class="shows__textbox">
+                        <span class="shows__subheader shows__subheader--col">Venue</span>
+                        <span class="shows__text">Ronald Lane</span>
+                    </div>
+                    <div class="shows__textbox">
+                        <span class="shows__subheader shows__subheader--col">Location</span>
+                        <span class="shows__text">San Francisco, CA</span>
+                    </div>
+
+                    <span class="shows__button">
+                        <a class="shows__link">Buy Tickets</a>
+                    </span>
+                </div> -->
+            </div>
+        </section>
+
+
+
+        <footer>
+            <section class="footer">
+
+                <div class="footer__card-container">
+
+
+                    <div class="footer__card">
+                        <div class="footer__heading-card">
+                            <div class="footer__icons">
+                                <h2 class="footer__heading">Get in Touch</h2>
+
+                                <a href="http://www.instagram.com" class="footer__link" target="_blank">
+                                    <img src="../assets/icons/Icon-instagram.svg" alt="instagram icon"
+                                        class="footer__icon">
+                                </a>
+                                <a href="http://www.facebook.com" class="footer__link" target="_blank">
+                                    <img src="../assets/icons/Icon-facebook.svg" alt="facebook icon"
+                                        class="footer__icon">
+                                </a>
+                                <a href="http://www.twitter.com" class="footer__link" target="_blank">
+                                    <img src="../assets/icons/Icon-twitter.svg" alt="twitter icon" class="footer__icon">
+                                </a>
+                            </div>
+                            <img src="../assets/logos/Logo-bandsite.svg" alt="bandsite logo"
+                                class="footer__logo footer__logo--top">
+                        </div>
+
+                    </div>
+                    <div class="footer__cards">
+                        <div class="footer__card">
+                            <h4 class="footer__subheading">Cam Adams</h4>
+                            <h4 class="footer__subheading">The Bees Knees Management</h4>
+                            <div class="footer__textbox">
+                                <span class="footer__text">503 Broadway Penthouse,</span>
+                                <span class="footer__text">New York, NY 10012, USA</span>
+                            </div>
+                            <span class="footer__text">
+                                <a href="mailto:info@thebeesknees.com" class="footer__email">info@thebeesknees.com</a>
+                            </span>
+                        </div>
+
+                        <div class="footer__card">
+                            <h4 class="footer__subheading">Pearl Gregg</h4>
+                            <h4 class="footer__subheading">Limitless Artist Group</h4>
+                            <div class="footer__textbox">
+                                <span class="footer__text">Booking Agent for</span>
+                                <span class="footer__text">US / South America / Japan</span>
+                            </div>
+                            <span class="footer__text">
+                                <a href="mailto:pearl.gregg@limitlessag.com"
+                                    class="footer__email">pearl.gregg@limitlessag.com</a>
+                            </span>
+
+                        </div>
+
+                        <div class="footer__card">
+                            <h4 class="footer__subheading">Carson Whyte</h4>
+                            <h4 class="footer__subheading">ARCH Entertainment</h4>
+                            <div class="footer__textbox">
+                                <span class="footer__text">Booking Agent for</span>
+                                <span class="footer__text">UK / EU / AU</span>
+                            </div>
+                            <span class="footer__text">
+                                <a href="mailto:cwhyte@archentertainment.com"
+                                    class="footer__email">cwhyte@archentertainment.com</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="footer__copyright-card">
+                        <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo"
+                            class="footer__logo footer__logo--bottom">
+                        <span class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</span>
+                    </div>
+                </div>
+            </section>
+
+        </footer>
+
+
+
+    </main>
+
 
     <script href="../scripts/build-shows-page.js"></script>
 

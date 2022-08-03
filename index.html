@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biography</title>
     <link rel="stylesheet" href="./styles/bio.css">
-    <link rel="stylesheet" href="./styles/global.css">
 </head>
 
 <body>
@@ -20,10 +19,10 @@
                 </a>
                 <ul class="navigation__list">
                     <li class="navigation__heading navigation__heading--active">
-                        <a href="" class="navigation__link">Biography</a>
+                        <a href="./index.html" class="navigation__link">Biography</a>
                     </li>
                     <li class="navigation__heading">
-                        <a href="" class="navigation__link">Shows</a>
+                        <a href="./pages/shows.html" class="navigation__link">Shows</a>
                     </li>
                 </ul>
             </div>
@@ -106,6 +105,28 @@
                     <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti falling on crowd"
                         class="gallery__image">
                 </div>
+            </div>
+        </section>
+
+        <!-- Comments Section *** to be added with JS -->
+        <section class="comments">
+            <h2 class="comments__heading">Join the Conversation</h2>
+            <div class="comments__main">
+                <div class="comments__image-main"></div>
+                <form action="" class="comments__form">
+                    <div>
+                        <label for="name" class="comments__label">Name</label>
+                        <input type="text" placeholder="Enter your name" class="comments__form-field">
+                    </div>
+                    <div>
+                        <label for="comment" class="comments__label">Comment</label>
+                        <input type="textbox" placeholder="Add a new comment" class="comments__form-field">
+                    </div>
+                    <div>
+
+                        <input type="submit" value="Comment" class="comments__button">
+                    </div>
+                </form>
             </div>
         </section>
 
