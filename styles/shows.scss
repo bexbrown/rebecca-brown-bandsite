@@ -36,16 +36,54 @@
 
 .shows {
     padding: 2rem 0;
-    @include flex;
-    @include flex-direction-column;
 
-    &__header {
-        padding: 0 1rem;
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            @include contain;
+        }
     }
 
     &__card {
         border-bottom: 2px solid $primary-medium;
-        padding: 0 1rem;
+
+
+        @include tablet {
+            margin: 0 2rem;
+        }
+
+        @include desktop {
+            width: 75%;
+        }
+    }
+
+    &__header {
+        padding: 0 2rem;
+
+        @include desktop {
+            padding: 0;
+            width: 25%;
+        }
+    }
+
+    &__text-row {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__text-row--titles {
+        @include tablet {
+            max-width: calc(100% - 15rem);
+            justify-content: space-between;
+        }
     }
 
     &__row {
@@ -85,7 +123,12 @@
         }
     }
 
-    &__td {
+    &__textbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
         font-size: 0.8rem;
         font-weight: 600;
     }
