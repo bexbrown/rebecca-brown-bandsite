@@ -168,19 +168,33 @@
 }
 
 .comments {
-    margin: 0 1rem;
+    margin: 1rem;
 
     @include tablet {
-        margin: 0 2.25rem;
+        margin: 2.25rem 2.25rem 2rem 2.25rem;
     }
 
     @include desktop {
         @include contain;
+        padding: 2rem 0;
     }
+
+    &__heading {
+        @include tablet {
+            margin-bottom: 1rem;
+        }
+    }
+
+
 
     &__section {
         display: flex;
+
+        @include tablet {
+            margin: 0 4rem;
+        }
     }
+
 
 
     &__section--main {
@@ -195,6 +209,11 @@
 
     &__section--added {
         border-bottom: 2px solid $secondary-medium;
+        padding-bottom: 1rem;
+
+        @include desktop {
+            margin: 0;
+        }
     }
 
 
@@ -202,9 +221,8 @@
     &__image {
         height: 2.25rem;
         width: 2.25rem;
-        background-size: cover;
         border-radius: 50%;
-        margin: 1.25rem 1rem 0 0;
+        margin-right: 1rem;
         background-color: $secondary-medium;
 
         @include tablet {
@@ -216,18 +234,31 @@
 
     &__image--main {
         background-image: url(../assets/images/Mohan-muruge.jpg);
+        margin-top: 2.25rem;
+    }
+
+    &__image--added {
+        margin-top: 1rem;
+
+        @include tablet {
+            margin-top: 1.75rem;
+        }
     }
 
     &__form {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     &__label {
+        display: block;
         text-transform: uppercase;
         color: $primary-medium;
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         line-height: 1.25rem;
-        font-weight: 700;
+        font-weight: 600;
+        padding-top: 1rem;
 
         @include tablet {
             font-size: 0.75rem;
@@ -251,8 +282,9 @@
     }
 
     &__form-field::placeholder {
-        color: $secondary-dark;
+        color: $primary-dark;
     }
+
 
     &__text-input {
         height: 6rem;
@@ -261,6 +293,10 @@
 
     &__button {
         @include button;
+
+        @include tablet {
+            align-self: flex-end;
+        }
     }
 
     &__button:hover {
@@ -287,12 +323,15 @@
 
         @include tablet {
             font-size: 0.9rem;
+            margin: 0.5rem 0;
+            line-height: 1.5rem;
         }
     }
 
     &__comment-header {
         display: flex;
         justify-content: space-between;
+        margin: 1rem 0 0.5rem 0;
     }
 
     &__username {
@@ -300,6 +339,6 @@
     }
 
     &__date {
-        color: $secondary-medium;
+        color: $primary-medium;
     }
 }
