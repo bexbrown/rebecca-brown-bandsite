@@ -494,6 +494,12 @@ h4 {
     margin: 0 auto;
   }
 }
+.comments__section {
+  display: flex;
+}
+.comments__section--added {
+  flex-direction: row;
+}
 @media (min-width: 1280px) {
   .comments__section--main {
     width: 30rem;

@@ -177,6 +177,14 @@
         @include contain;
     }
 
+    &__section {
+        display: flex;
+    }
+
+    &__section--added {
+        flex-direction: row;
+    }
+
 
     &__section--main {
         @include desktop {

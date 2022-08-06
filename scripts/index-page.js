@@ -38,7 +38,7 @@ function defaultComments() {
         //text container
         let textContainer = document.createElement("div");
         textContainer.classList.add("comments__content");
-        container.appendChild(textContainer);
+        card.appendChild(textContainer);
 
         //comment header 
         let header = document.createElement("div");
@@ -49,19 +49,19 @@ function defaultComments() {
         let username = document.createElement("span");
         username.classList.add("comments__username");
         username.innerText = comments[i].name;
-        textContainer.appendChild(username);
+        header.appendChild(username);
 
         //date 
         let date = document.createElement("span");
         date.classList.add("comments__date");
         date.innerText = comments[i].date;
-        textContainer.appendChild(date);
+        header.appendChild(date);
 
         //comment text
         let commentText = document.createElement("span");
         commentText.classList.add("comments__comment");
         commentText.innerText = comments[i].comment;
-        container.appendChild(commentText);
+        textContainer.appendChild(commentText);
 
         commentSection.appendChild(container);
     }
