@@ -494,17 +494,13 @@ h4 {
     margin: 0 auto;
   }
 }
-.comments__section {
-  border-bottom: 2px solid #E1E1E1;
-  display: flex;
-}
 @media (min-width: 1280px) {
-  .comments__section {
+  .comments__section--main {
     width: 30rem;
   }
 }
 @media (min-width: 1280px) and (min-width: 1280px) {
-  .comments__section {
+  .comments__section--main {
     max-width: 63.75rem;
     margin: 0 auto;
   }
@@ -582,6 +578,22 @@ h4 {
 }
 .comments__button:hover {
   background-color: #000000;
+}
+.comments__container {
+  border-bottom: 2px solid #E1E1E1;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1280px) {
+  .comments__container {
+    width: 30rem;
+  }
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .comments__container {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
 }
 .comments__content {
   width: 100%;

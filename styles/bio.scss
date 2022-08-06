@@ -177,15 +177,15 @@
         @include contain;
     }
 
-    &__section {
-        border-bottom: 2px solid $secondary-medium;
-        @include flex;
 
+    &__section--main {
         @include desktop {
             @include contain;
             width: 30rem;
         }
     }
+
+
 
     &__image {
         height: 2.25rem;
@@ -247,6 +247,17 @@
 
     &__button:hover {
         @include button-hover;
+    }
+
+    &__container {
+        border-bottom: 2px solid $secondary-medium;
+        @include flex;
+        flex-direction: column;
+
+        @include desktop {
+            @include contain;
+            width: 30rem;
+        }
     }
 
     &__content {
