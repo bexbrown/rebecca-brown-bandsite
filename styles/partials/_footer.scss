@@ -29,8 +29,8 @@
 
     &__heading-card {
         @include tablet {
-            @include flex;
-            @include justify-content-space-between;
+            display: flex;
+            justify-content: space-between;
         }
     }
 
@@ -45,8 +45,8 @@
     &__icons {
 
         @include tablet {
-            @include flex;
-            @include align-items-center;
+            display: flex;
+            align-items: center;
         }
     }
 
@@ -65,7 +65,7 @@
     }
 
     &__logo--top {
-        @include display-none;
+        display: none;
 
         @include tablet {
             display: block;
@@ -75,14 +75,14 @@
 
     &__logo--bottom {
         @include tablet {
-            @include display-none;
+            display: none;
         }
     }
 
     &__cards {
         @include tablet {
-            @include flex;
-            @include justify-content-space-between;
+            display: flex;
+            justify-content: space-between;
             margin: 1rem 0;
         }
 
@@ -99,8 +99,8 @@
     }
 
     &__textbox {
-        @include flex;
-        @include flex-direction-column;
+        display: flex;
+        flex-direction: column;
         margin: 1em 0;
 
         @include tablet {
@@ -113,8 +113,8 @@
     }
 
     &__copyright-card {
-        @include flex;
-        @include flex-direction-column;
+        display: flex;
+        flex-direction: column;
     }
 
     &__copyright {

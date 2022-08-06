@@ -177,11 +177,13 @@ h4 {
   background-position: center;
   background-size: cover;
   width: 100%;
+  height: 55vw;
 }
 .hero__background-cover {
   background-color: rgba(50, 50, 50, 0.5);
   display: flex;
   align-items: center;
+  height: 55vw;
 }
 .hero__heading {
   color: #FFFFFF;
@@ -320,10 +322,11 @@ h4 {
 
 .hero__background-image {
   background-image: url(../assets/images/hero-bio.jpg);
-  height: 55vw;
 }
-.hero__background-cover {
-  height: 55vw;
+@media (min-width: 1280px) {
+  .hero__heading {
+    width: 63.75rem;
+  }
 }
 
 .about {
@@ -439,7 +442,7 @@ h4 {
 }
 @media (min-width: 768px) {
   .gallery {
-    padding: 3rem 2.25rem 1rem 2.25rem;
+    padding: 3rem 2.25rem 2rem 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -490,7 +493,7 @@ h4 {
 }
 @media (min-width: 1280px) {
   .comments {
-    padding: 2rem 0;
+    padding: 3rem 0 2rem 0;
   }
 }
 @media (min-width: 1280px) and (min-width: 1280px) {
@@ -553,6 +556,7 @@ h4 {
   margin-top: 2.25rem;
 }
 .comments__image--added {
+  padding: 1rem;
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
@@ -567,12 +571,12 @@ h4 {
 }
 .comments__label {
   display: block;
+  padding-top: 1rem;
   text-transform: uppercase;
   color: #AFAFAF;
   font-size: 0.65rem;
   line-height: 1.25rem;
   font-weight: 600;
-  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   .comments__label {

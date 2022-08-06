@@ -11,42 +11,67 @@
     &__background-image {
         background-image: url(../assets/images/hero-shows.jpg);
         height: 90vw;
+        width: 100%;
+
+        @include tablet {
+            height: 50vw;
+            background-position: 0 -7rem;
+
+
+        }
     }
 
     &__background-cover {
+        padding: 1rem 0;
         height: 90vw;
+        flex-wrap: wrap;
+
+        @include tablet {
+            height: 50vw;
+        }
+
+    }
+
+    &__container {
+        @include desktop {
+            @include contain;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__text {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
 
         @include desktop {
-            flex-direction: row;
+            width: 50%;
         }
     }
 
     &__album {
-        padding: 1rem 0 1rem 1rem;
+        margin: 0 0 1rem 1rem;
         font-size: 0.8rem;
         line-height: 1.3rem;
         font-weight: 400;
         color: $primary-light;
+        width: 100%;
 
         @include tablet {
-            padding-left: 2rem;
-            font-size: 1.7rem;
+            margin-left: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
-        }
-
-        @include desktop {
-            @include contain;
-            width: 100%;
         }
     }
 
     &__heading {
         width: 75vw;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
 
+        @include desktop {
+            width: 100%;
+        }
     }
 
     &__iframe {
@@ -61,7 +86,14 @@
         text-overflow: ellipsis;
         margin: 0 1rem;
 
+        @include tablet {
+            margin-left: 2rem;
+        }
 
+        @include desktop {
+            height: 8rem;
+            width: 25rem;
+        }
     }
 }
 
@@ -129,16 +161,8 @@
     }
 
     &__subheader {
-        text-transform: uppercase;
-        color: $primary-medium;
-        font-size: 0.65rem;
-        line-height: 1.25rem;
-        font-weight: 600;
         margin: 1rem 0 0.25rem 0;
-
-        @include tablet {
-            font-size: 0.75rem;
-        }
+        @include label-fontstyle;
     }
 
     &__subheader--row {

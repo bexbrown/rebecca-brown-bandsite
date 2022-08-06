@@ -10,8 +10,8 @@
 
     &__container {
         @include tablet {
-            @include flex;
-            @include align-items-center;
+            display: flex;
+            align-items: center;
             padding: 0 2rem;
         }
 
@@ -36,13 +36,12 @@
     &__list {
         margin-top: 0.5rem;
         padding: 0rem;
-        @include flex;
+        display: flex;
     }
 
     &__heading {
         width: 50%;
         padding-bottom: 0.5rem;
-        // color: $secondary-medium;
 
         @include tablet {
             padding: 1rem 0 1.75rem;

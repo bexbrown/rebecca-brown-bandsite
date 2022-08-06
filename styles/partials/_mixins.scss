@@ -22,36 +22,6 @@
     }
 }
 
-//flexbox mixins
-@mixin flex {
-    display: flex;
-}
-
-@mixin flex-wrap {
-    flex-wrap: wrap;
-}
-
-@mixin align-items-center {
-    align-items: center;
-}
-
-@mixin flex-direction-column {
-    flex-direction: column;
-}
-
-@mixin justify-content-space-between {
-    justify-content: space-between;
-}
-
-@mixin justify-content-center {
-    justify-content: center;
-}
-
-//display none mixin 
-@mixin display-none {
-    display: none;
-}
-
 @mixin button {
     display: block;
     color: $primary-light;
@@ -63,9 +33,9 @@
     height: 2.5rem;
     margin: 1rem 0;
     border-radius: 0.25rem;
-    @include flex;
-    @include align-items-center;
-    @include justify-content-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include tablet {
         width: 10rem;
@@ -75,4 +45,16 @@
 
 @mixin button-hover {
     background-color: $secondary-dark;
+}
+
+@mixin label-fontstyle {
+    text-transform: uppercase;
+    color: $primary-medium;
+    font-size: 0.65rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 0.75rem;
+    }
 }

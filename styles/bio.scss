@@ -13,11 +13,13 @@
 .hero {
     &__background-image {
         background-image: url(../assets/images/hero-bio.jpg);
-        height: 55vw;
     }
 
-    &__background-cover {
-        height: 55vw;
+    &__heading {
+        @include desktop {
+            width: 63.75rem;
+        }
+
     }
 }
 
@@ -105,8 +107,8 @@
     &__textbox {
 
         @include tablet {
-            @include flex;
-            @include justify-content-space-between;
+            display: flex;
+            justify-content: space-between;
         }
     }
 
@@ -125,7 +127,7 @@
     background-color: $secondary-light;
 
     @include tablet {
-        padding: 3rem 2.25rem 1rem 2.25rem;
+        padding: 3rem 2.25rem 2rem 2.25rem;
     }
 
     &__container {
@@ -139,8 +141,8 @@
 
     &__images {
         @include tablet {
-            @include flex;
-            @include flex-wrap;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
         }
@@ -176,7 +178,7 @@
 
     @include desktop {
         @include contain;
-        padding: 2rem 0;
+        padding: 3rem 0 2rem 0;
     }
 
     &__heading {
@@ -216,8 +218,6 @@
         }
     }
 
-
-
     &__image {
         height: 2.25rem;
         width: 2.25rem;
@@ -238,6 +238,7 @@
     }
 
     &__image--added {
+        padding: 1rem;
         margin-top: 1rem;
 
         @include tablet {
@@ -253,16 +254,8 @@
 
     &__label {
         display: block;
-        text-transform: uppercase;
-        color: $primary-medium;
-        font-size: 0.65rem;
-        line-height: 1.25rem;
-        font-weight: 600;
         padding-top: 1rem;
-
-        @include tablet {
-            font-size: 0.75rem;
-        }
+        @include label-fontstyle;
     }
 
     &__form-field {
@@ -304,7 +297,7 @@
     }
 
     &__container {
-        @include flex;
+        display: flex;
         flex-direction: column;
 
         @include desktop {
