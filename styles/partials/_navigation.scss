@@ -21,10 +21,10 @@
     }
 
     &__link {
-        color: $primary-light;
+        color: $secondary-medium;
 
         @include tablet {
-            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -42,6 +42,7 @@
     &__heading {
         width: 50%;
         padding-bottom: 0.5rem;
+        // color: $secondary-medium;
 
         @include tablet {
             padding: 1rem 0 1.75rem;
@@ -56,7 +57,7 @@
     }
 
     &__heading--active {
-        font-weight: 600;
+        font-weight: 700;
         border-bottom: solid $primary-light 3px;
     }
 }

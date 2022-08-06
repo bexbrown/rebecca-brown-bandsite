@@ -52,33 +52,6 @@
     display: none;
 }
 
-//hero image format mixin
-@mixin hero-bg-image {
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-}
-
-@mixin hero-bg-cover {
-    background-color: rgba(50, 50, 50, 0.5);
-    @include flex;
-    @include align-items-center;
-}
-
-@mixin hero-heading {
-    color: $primary-light;
-    padding-left: 1rem;
-
-    @media (min-width: $breakpoint-tablet) {
-        padding-left: 2rem;
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-        width: 63.75rem;
-        @include contain;
-    }
-}
-
 @mixin button {
     display: block;
     color: $primary-light;

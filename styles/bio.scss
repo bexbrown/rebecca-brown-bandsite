@@ -169,11 +169,16 @@
 .comments {
     margin: 0 1rem;
 
+    @include tablet {
+        margin: 0 2.25rem;
+    }
+
     @include desktop {
         @include contain;
     }
 
-    &__main {
+    &__section {
+        border-bottom: 2px solid $secondary-medium;
         @include flex;
 
         @include desktop {
@@ -182,8 +187,7 @@
         }
     }
 
-    &__image-main {
-        background-image: url(../assets/images/Mohan-muruge.jpg);
+    &__image {
         height: 2.25rem;
         width: 2.25rem;
         background-size: cover;
@@ -196,6 +200,10 @@
             width: 3rem;
 
         }
+    }
+
+    &__image--main {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
     }
 
     &__form {
@@ -239,5 +247,31 @@
 
     &__button:hover {
         @include button-hover;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        font-weight: 400;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__comment-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__username {
+        font-weight: 600;
+    }
+
+    &__date {
+        color: $secondary-medium;
     }
 }

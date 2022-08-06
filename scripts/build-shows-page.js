@@ -35,67 +35,6 @@ let shows = [
 let showsEl = document.querySelector(".shows")
 const titles = ["Date", "Venue", "Location"];
 
-// //create show card
-
-// function createCard(show) {
-// const card = document.createElement("div");
-// card.classList.add("shows__text-row");
-
-// //create first textbox
-// let textbox = document.createElement("div");
-// textbox.classList.add("shows__textbox");
-// card.appendChild(textbox);
-
-// let subheader = document.createElement("span");
-// subheader.classList.add("shows__subheader", "shows__subheader--col");
-// subheader.innerText = "Date";
-// card.appendChild(subheader);
-
-// let text = document.createElement("span");
-// text.classList.add("shows__text", "shows__date");
-
-// text.innerHTML = show.date;
-// card.appendChild(text);
-
-// //create second textbox
-// textbox = document.createElement("div");
-// textbox.classList.add("shows__textbox");
-// card.appendChild(textbox);
-
-// subheader = document.createElement("span");
-// subheader.classList.add("shows__subheader", "shows__subheader--col");
-// subheader.innerText = "Venue";
-// card.appendChild(subheader);
-
-// text = document.createElement("span");
-// text.classList.add("shows__text");
-
-// text.innerHTML = show.venue;
-// card.appendChild(text);
-
-// //create third textbox {
-// textbox = document.createElement("div");
-// textbox.classList.add("shows__textbox");
-// card.appendChild(textbox);
-
-// subheader = document.createElement("span");
-// subheader.classList.add("shows__subheader", "shows__subheader--col");
-// subheader.innerText = "Location";
-// card.appendChild(subheader);
-
-// text = document.createElement("span");
-// text.classList.add("shows__text");
-
-// text.innerHTML = show.location;
-// card.appendChild(text);
-// }
-
-//loops once for each show in shows array 
-
-// for (let i = 0; i < shows.length; i++) {
-//     createCard(shows[i]);
-// }
-
 // create titles displayed on tablet + desktop
 function createTable(showCards) {
     const showTitles = document.createElement("div");
@@ -196,8 +135,6 @@ function createContainer() {
     showsContainer.appendChild(showCards);
 
     createTable(showCards);
-
-
 }
 
 createContainer();

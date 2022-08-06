@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 *,
@@ -138,11 +138,11 @@ h4 {
   }
 }
 .navigation__link {
-  color: #FFFFFF;
+  color: #E1E1E1;
 }
 @media (min-width: 768px) {
   .navigation__link {
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 .navigation__logo {
@@ -169,7 +169,7 @@ h4 {
   border-bottom: solid #FFFFFF 3px;
 }
 .navigation__heading--active {
-  font-weight: 600;
+  font-weight: 700;
   border-bottom: solid #FFFFFF 3px;
 }
 
@@ -288,7 +288,7 @@ h4 {
   }
 }
 @media (min-width: 768px) {
-  .footer__subheading {
+  .footer__agency {
     font-size: 0.9rem;
   }
 }
@@ -320,26 +320,59 @@ h4 {
 
 .hero__background-image {
   background-image: url(../assets/images/hero-shows.jpg);
-  height: 75vw;
+  height: 90vw;
 }
 .hero__background-cover {
-  height: 75vw;
+  height: 90vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+@media (min-width: 1280px) {
+  .hero__background-cover {
+    flex-direction: row;
+  }
+}
 .hero__album {
-  padding-left: 1rem;
+  padding: 1rem 0 1rem 1rem;
   font-size: 0.8rem;
   line-height: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #FFFFFF;
 }
 @media (min-width: 768px) {
   .hero__album {
     padding-left: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
+}
+@media (min-width: 1280px) {
+  .hero__album {
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .hero__album {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+.hero__heading {
+  width: 75vw;
+  padding-bottom: 1.5rem;
+}
+.hero__iframe {
+  width: 18rem;
+  height: 7rem;
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0 1rem;
 }
 
 .shows {

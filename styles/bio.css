@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 *,
@@ -138,11 +138,11 @@ h4 {
   }
 }
 .navigation__link {
-  color: #FFFFFF;
+  color: #E1E1E1;
 }
 @media (min-width: 768px) {
   .navigation__link {
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 .navigation__logo {
@@ -169,7 +169,7 @@ h4 {
   border-bottom: solid #FFFFFF 3px;
 }
 .navigation__heading--active {
-  font-weight: 600;
+  font-weight: 700;
   border-bottom: solid #FFFFFF 3px;
 }
 
@@ -288,7 +288,7 @@ h4 {
   }
 }
 @media (min-width: 768px) {
-  .footer__subheading {
+  .footer__agency {
     font-size: 0.9rem;
   }
 }
@@ -483,28 +483,33 @@ h4 {
 .comments {
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .comments {
+    margin: 0 2.25rem;
+  }
+}
 @media (min-width: 1280px) and (min-width: 1280px) {
   .comments {
     max-width: 63.75rem;
     margin: 0 auto;
   }
 }
-.comments__main {
+.comments__section {
+  border-bottom: 2px solid #E1E1E1;
   display: flex;
 }
 @media (min-width: 1280px) {
-  .comments__main {
+  .comments__section {
     width: 30rem;
   }
 }
 @media (min-width: 1280px) and (min-width: 1280px) {
-  .comments__main {
+  .comments__section {
     max-width: 63.75rem;
     margin: 0 auto;
   }
 }
-.comments__image-main {
-  background-image: url(../assets/images/Mohan-muruge.jpg);
+.comments__image {
   height: 2.25rem;
   width: 2.25rem;
   background-size: cover;
@@ -513,10 +518,13 @@ h4 {
   background-color: #E1E1E1;
 }
 @media (min-width: 768px) {
-  .comments__image-main {
+  .comments__image {
     height: 3rem;
     width: 3rem;
   }
+}
+.comments__image--main {
+  background-image: url(../assets/images/Mohan-muruge.jpg);
 }
 .comments__form {
   width: 100%;
@@ -574,4 +582,27 @@ h4 {
 }
 .comments__button:hover {
   background-color: #000000;
+}
+.comments__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .comments__content {
+    font-size: 0.9rem;
+  }
+}
+.comments__comment-header {
+  display: flex;
+  justify-content: space-between;
+}
+.comments__username {
+  font-weight: 600;
+}
+.comments__date {
+  color: #E1E1E1;
 }/*# sourceMappingURL=bio.css.map */
