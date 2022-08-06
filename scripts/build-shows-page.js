@@ -53,7 +53,7 @@ function createTable(showCards) {
     for (let i = 0; i < shows.length; i++) {
 
         const card = document.createElement("div");
-        card.classList.add("shows__text-row");
+        card.classList.add("shows__text-row", "shows__row--shows");
 
 
         //create first textbox
@@ -79,13 +79,12 @@ function createTable(showCards) {
         subheader = document.createElement("span");
         subheader.classList.add("shows__subheader", "shows__subheader--col");
         subheader.innerText = "Venue";
-        card.appendChild(subheader);
+        textbox.appendChild(subheader);
 
         text = document.createElement("span");
         text.classList.add("shows__text");
-
         text.innerHTML = shows[i].venue;
-        card.appendChild(text);
+        textbox.appendChild(text);
 
         //create third textbox {
         textbox = document.createElement("div");
@@ -95,13 +94,12 @@ function createTable(showCards) {
         subheader = document.createElement("span");
         subheader.classList.add("shows__subheader", "shows__subheader--col");
         subheader.innerText = "Location";
-        card.appendChild(subheader);
-
+        textbox.appendChild(subheader);
         text = document.createElement("span");
         text.classList.add("shows__text");
 
         text.innerHTML = shows[i].location;
-        card.appendChild(text);
+        textbox.appendChild(text);
 
         //create button
         let button = document.createElement("span");

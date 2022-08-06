@@ -67,9 +67,8 @@
 
 
 .shows {
-    padding: 2rem 0;
-
     &__container {
+
         @include tablet {
             display: flex;
             flex-direction: column;
@@ -82,32 +81,37 @@
     }
 
     &__card {
-        border-bottom: 2px solid $primary-medium;
-
 
         @include tablet {
-            margin: 0 2rem;
+            margin: 0 1rem 2rem 1rem;
         }
 
         @include desktop {
+            margin: 3rem 0 2rem 0;
             width: 75%;
         }
     }
 
     &__header {
-        padding: 0 2rem;
+        margin: 2rem 1rem 1rem 1rem;
+        color: $secondary-dark;
+
+        @include tablet {
+            margin: 3rem 0 1.5rem 2rem;
+        }
 
         @include desktop {
-            padding: 0;
+            margin: 3rem 0 0 0;
             width: 25%;
         }
     }
 
     &__text-row {
+
         @include tablet {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            padding: 0 1rem;
         }
     }
 
@@ -118,22 +122,19 @@
         }
     }
 
-    &__row {
-        display: flex;
-        flex-direction: column;
+    &__row--shows {
+        padding: 0 1rem;
+        border-bottom: 2px solid $secondary-medium;
 
-        @include tablet {
-            flex-direction: row;
-            align-items: center;
-        }
     }
 
     &__subheader {
         text-transform: uppercase;
         color: $primary-medium;
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         line-height: 1.25rem;
-        font-weight: 700;
+        font-weight: 600;
+        margin: 1rem 0 0.25rem 0;
 
         @include tablet {
             font-size: 0.75rem;
@@ -146,6 +147,7 @@
 
         @include tablet {
             display: block;
+            flex-basis: 25%;
         }
     }
 
@@ -158,6 +160,10 @@
     &__textbox {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            flex-basis: 25%;
+        }
     }
 
     &__text {
