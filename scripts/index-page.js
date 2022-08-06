@@ -17,11 +17,11 @@ const comments = [
 ]
 
 const commentSection = document.querySelector(".comments");
+let container = document.createElement("div");
+container.classList.add("comments__container");
 
-function defaultComments() {
+function displayComments() {
 
-    let container = document.createElement("div");
-    container.classList.add("comments__container");
 
     for (let i = 0; i < comments.length; i++) {
 
@@ -132,7 +132,7 @@ function commentInputSection() {
 
 
 commentInputSection();
-defaultComments();
+displayComments();
 
 
 //form submit
@@ -177,7 +177,9 @@ function createComment() {
     comments.unshift(newComment);
     commentList.innerHTML = "";
 
-    defaultComments();
+    console.log(comments);
+
+    displayComments();
 
 };
 

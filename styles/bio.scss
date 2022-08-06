@@ -6,6 +6,7 @@
 @use "./partials/breakpoints" as *;
 @use "./partials/mixins" as *;
 @use "./partials/typography" as *;
+@use "./partials/fonts" as *;
 
 
 
@@ -181,16 +182,19 @@
         display: flex;
     }
 
-    &__section--added {
-        flex-direction: row;
-    }
-
 
     &__section--main {
+        border-bottom: 2px solid $secondary-medium;
+
         @include desktop {
             @include contain;
             width: 30rem;
+
         }
+    }
+
+    &__section--added {
+        border-bottom: 2px solid $secondary-medium;
     }
 
 
@@ -237,7 +241,8 @@
         padding: 0.75rem;
         margin: 0.025rem 0;
         border: 1px solid $secondary-medium;
-        color: $primary-dark;
+        color: $secondary-dark;
+        font-family: $font-stack;
 
         @include tablet {
             height: 3rem;
@@ -245,8 +250,13 @@
         }
     }
 
-    &__form-field:active {
-        border: 1px solid $primary-dark;
+    &__form-field::placeholder {
+        color: $secondary-dark;
+    }
+
+    &__text-input {
+        height: 6rem;
+        resize: none;
     }
 
     &__button {
@@ -258,7 +268,6 @@
     }
 
     &__container {
-        border-bottom: 2px solid $secondary-medium;
         @include flex;
         flex-direction: column;
 
