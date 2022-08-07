@@ -64,14 +64,19 @@
     &__row--shows {
         padding: 0 1rem;
         border-bottom: 2px solid $secondary-medium;
+        cursor: pointer;
     }
 
     &__row--shows:hover {
         background-color: $secondary-light;
     }
 
-    &__row--shows:active {
-        background-color: $primary-medium;
+    &__row--selected {
+        background-color: $secondary-medium;
+    }
+
+    &__row--selected:hover {
+        background-color: $secondary-medium;
     }
 
     &__subheader {

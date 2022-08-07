@@ -60,6 +60,10 @@
             font-size: 1.5rem;
             font-weight: 600;
         }
+
+        @include desktop {
+            margin-left: 0;
+        }
     }
 
     &__heading {

@@ -171,10 +171,12 @@ h4 {
 }
 .navigation__heading:hover {
   font-weight: 600;
+  color: #FFFFFF;
   border-bottom: solid #FFFFFF 3px;
 }
 .navigation__heading--active {
   font-weight: 700;
+  color: #FFFFFF;
   border-bottom: solid #FFFFFF 3px;
 }
 

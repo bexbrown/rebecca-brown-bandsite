@@ -53,12 +53,14 @@
 
     &__heading:hover {
         font-weight: 600;
+        color: $primary-light;
         border-bottom: solid $primary-light 3px;
 
     }
 
     &__heading--active {
         font-weight: 700;
+        color: $primary-light;
         border-bottom: solid $primary-light 3px;
     }
 }

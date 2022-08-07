@@ -171,10 +171,12 @@ h4 {
 }
 .navigation__heading:hover {
   font-weight: 600;
+  color: #FFFFFF;
   border-bottom: solid #FFFFFF 3px;
 }
 .navigation__heading--active {
   font-weight: 700;
+  color: #FFFFFF;
   border-bottom: solid #FFFFFF 3px;
 }
 
@@ -241,6 +243,11 @@ h4 {
     margin-left: 2rem;
     font-size: 1.5rem;
     font-weight: 600;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__album {
+    margin-left: 0;
   }
 }
 .hero__heading {
@@ -349,12 +356,16 @@ h4 {
 .shows__row--shows {
   padding: 0 1rem;
   border-bottom: 2px solid #E1E1E1;
+  cursor: pointer;
 }
 .shows__row--shows:hover {
   background-color: #FAFAFA;
 }
-.shows__row--shows:active {
-  background-color: #AFAFAF;
+.shows__row--selected {
+  background-color: #E1E1E1;
+}
+.shows__row--selected:hover {
+  background-color: #E1E1E1;
 }
 .shows__subheader {
   margin: 1rem 0 0.25rem 0;

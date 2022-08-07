@@ -137,3 +137,27 @@ function createContainer() {
 
 createContainer();
 
+
+//row active state status
+
+let rows = document.querySelectorAll(".shows__row--shows");
+
+function removeSelector() {
+    rows.forEach((row) => {
+        row.classList.remove("shows__row--selected");
+    })
+}
+
+function rowSelection() {
+    rows.forEach((row, index) => {
+        row.addEventListener("click", () => {
+            removeSelector();
+            row.classList.add("shows__row--selected");
+        })
+    })
+}
+
+rowSelection();
+
+
+

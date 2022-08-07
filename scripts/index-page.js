@@ -61,10 +61,10 @@ function displayComments(commentInput) {
     textContainer.appendChild(commentText);
 
     commentSection.appendChild(container);
+
 }
 
-
-function commentInputSection() {
+function createInputSection() {
 
     //header
     let heading = document.createElement("h2");
@@ -132,8 +132,7 @@ function commentInputSection() {
     }
 }
 
-commentInputSection();
-
+createInputSection();
 
 //form submit
 
@@ -149,11 +148,9 @@ function formReset() {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    createComment();
+    newComment();
     formReset();
 });
-
-
 
 function getDate() {
     let date = new Date();
@@ -161,12 +158,11 @@ function getDate() {
     return currentDate;
 }
 
-function createComment() {
+function newComment() {
 
     let name = nameInput.value;
     let text = commentInput.value;
     let date = getDate();
-
 
     let newComment = {
         name: name,
@@ -177,10 +173,7 @@ function createComment() {
     comments.unshift(newComment);
     commentList.innerHTML = "";
 
-    console.log(comments);
-
     for (let i = 0; i < comments.length; i++) {
-
         displayComments(comments[i]);
     }
 };
