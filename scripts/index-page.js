@@ -20,51 +20,47 @@ const commentSection = document.querySelector(".comments");
 let container = document.createElement("div");
 container.classList.add("comments__container");
 
-function displayComments() {
+function displayComments(commentInput) {
 
+    //card
+    let card = document.createElement("div");
+    card.classList.add("comments__section", "comments__section--added");
+    container.appendChild(card);
 
-    for (let i = 0; i < comments.length; i++) {
+    //profile image
+    let img = document.createElement("img");
+    img.classList.add("comments__image", "comments__image--added");
+    card.appendChild(img);
 
-        //card
-        let card = document.createElement("div");
-        card.classList.add("comments__section", "comments__section--added");
-        container.appendChild(card);
+    //text container
+    let textContainer = document.createElement("div");
+    textContainer.classList.add("comments__content");
+    card.appendChild(textContainer);
 
-        //profile image
-        let img = document.createElement("img");
-        img.classList.add("comments__image", "comments__image--added");
-        card.appendChild(img);
+    //comment header 
+    let header = document.createElement("div");
+    header.classList.add("comments__comment-header");
+    textContainer.appendChild(header);
 
-        //text container
-        let textContainer = document.createElement("div");
-        textContainer.classList.add("comments__content");
-        card.appendChild(textContainer);
+    //comment username
+    let username = document.createElement("span");
+    username.classList.add("comments__username");
+    username.innerText = commentInput.name;
+    header.appendChild(username);
 
-        //comment header 
-        let header = document.createElement("div");
-        header.classList.add("comments__comment-header");
-        textContainer.appendChild(header);
+    //date 
+    let date = document.createElement("span");
+    date.classList.add("comments__date");
+    date.innerText = commentInput.date;
+    header.appendChild(date);
 
-        //comment username
-        let username = document.createElement("span");
-        username.classList.add("comments__username");
-        username.innerText = comments[i].name;
-        header.appendChild(username);
+    //comment text
+    let commentText = document.createElement("span");
+    commentText.classList.add("comments__comment");
+    commentText.innerText = commentInput.comment;
+    textContainer.appendChild(commentText);
 
-        //date 
-        let date = document.createElement("span");
-        date.classList.add("comments__date");
-        date.innerText = comments[i].date;
-        header.appendChild(date);
-
-        //comment text
-        let commentText = document.createElement("span");
-        commentText.classList.add("comments__comment");
-        commentText.innerText = comments[i].comment;
-        textContainer.appendChild(commentText);
-
-        commentSection.appendChild(container);
-    }
+    commentSection.appendChild(container);
 }
 
 
@@ -130,11 +126,13 @@ function commentInputSection() {
 
     //append to comment section
     commentSection.appendChild(container);
+
+    for (let i = 0; i < comments.length; i++) {
+        displayComments(comments[i]);
+    }
 }
 
-
 commentInputSection();
-displayComments();
 
 
 //form submit
@@ -181,8 +179,10 @@ function createComment() {
 
     console.log(comments);
 
-    displayComments();
+    for (let i = 0; i < comments.length; i++) {
 
+        displayComments(comments[i]);
+    }
 };
 
 

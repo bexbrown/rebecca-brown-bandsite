@@ -10,24 +10,3 @@
 @use "./partials/mixins" as *;
 @use "./partials/typography" as *;
 @use "./partials/fonts" as *;
-
-// .hero {
-//     &__background-image {
-//         @include hero-image;
-//         background-image: url(../assets/images/hero-bio.jpg);
-//         height: 55vw;
-//     }
-
-//     &__background-cover {
-//         @include hero-cover;
-//         height: 55vw;
-//     }
-
-//     &__heading {
-//         @include hero-heading;
-
-//         @include desktop {
-//             width: 63.75rem;
-//         }
-//     }
-// }
