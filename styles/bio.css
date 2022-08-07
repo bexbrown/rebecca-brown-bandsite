@@ -502,6 +502,9 @@ h4 {
 .comments__text-input:focus {
   outline: solid 1px #000000;
 }
+.comments__input--required {
+  outline: solid 1px red;
+}
 .comments__button {
   display: block;
   color: #FFFFFF;

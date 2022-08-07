@@ -125,6 +125,10 @@
         outline: solid 1px $secondary-dark;
     }
 
+    &__input--required {
+        outline: solid 1px red;
+    }
+
     &__button {
         @include button;
 

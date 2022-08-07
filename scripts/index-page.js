@@ -100,7 +100,6 @@ function createInputSection() {
     nameInput.classList.add("comments__form-field", "comments__name-input");
     nameInput.setAttribute("type", "text");
     nameInput.setAttribute("placeholder", "Enter your name");
-    nameInput.setAttribute("required", "");
     form.appendChild(nameInput);
 
     //comment label
@@ -114,7 +113,6 @@ function createInputSection() {
     let commentInput = document.createElement("textarea");
     commentInput.classList.add("comments__form-field", "comments__text-input");
     commentInput.setAttribute("placeholder", "Add a new comment");
-    commentInput.setAttribute("required", "");
     form.appendChild(commentInput);
 
     //button
@@ -144,12 +142,37 @@ let commentList = document.querySelector(".comments__container");
 function formReset() {
     nameInput.value = "";
     commentInput.value = "";
+    nameInput.classList.remove("comments__input--required");
+    commentInput.classList.remove("comments__input--required");
 };
+
+function checkInputLength() {
+
+    if ((nameInput.value.length < 1) || (commentInput.value.length < 1)) {
+        //check name length 
+        if (nameInput.value.length < 1) {
+            nameInput.classList.add("comments__input--required");
+
+        } else {
+            nameInput.classList.remove("comments__input--required");
+        }
+
+        //check comment length {
+        if (commentInput.value.length < 1) {
+            commentInput.classList.add("comments__input--required");
+
+        } else {
+            commentInput.classList.remove("comments__input--required");
+        }
+    } else {
+        newComment();
+        formReset();
+    }
+}
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    newComment();
-    formReset();
+    checkInputLength();
 });
 
 function getDate() {
@@ -177,6 +200,7 @@ function newComment() {
         displayComments(comments[i]);
     }
 };
+
 
 
 
