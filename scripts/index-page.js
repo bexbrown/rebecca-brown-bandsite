@@ -104,6 +104,7 @@ function commentInputSection() {
     nameInput.classList.add("comments__form-field", "comments__name-input");
     nameInput.setAttribute("type", "text");
     nameInput.setAttribute("placeholder", "Enter your name");
+    nameInput.setAttribute("required", "");
     form.appendChild(nameInput);
 
     //comment label
@@ -117,6 +118,7 @@ function commentInputSection() {
     let commentInput = document.createElement("textarea");
     commentInput.classList.add("comments__form-field", "comments__text-input");
     commentInput.setAttribute("placeholder", "Add a new comment");
+    commentInput.setAttribute("required", "");
     form.appendChild(commentInput);
 
     //button

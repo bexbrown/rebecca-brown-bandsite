@@ -1,0 +1,185 @@
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+@use "./fonts" as *;
+
+
+
+.comments {
+    margin: 1rem;
+
+    @include tablet {
+        margin: 2.25rem 2.25rem 2rem 2.25rem;
+    }
+
+    @include desktop {
+        @include contain;
+        padding: 3rem 0 2rem 0;
+    }
+
+    &__heading {
+        @include tablet {
+            margin-bottom: 1rem;
+        }
+    }
+
+
+
+    &__section {
+        display: flex;
+
+        @include tablet {
+            margin: 0 4rem;
+        }
+    }
+
+
+
+    &__section--main {
+        border-bottom: 2px solid $secondary-medium;
+
+        @include desktop {
+            @include contain;
+            width: 30rem;
+
+        }
+    }
+
+    &__section--added {
+        border-bottom: 2px solid $secondary-medium;
+        padding-bottom: 1rem;
+
+        @include desktop {
+            margin: 0;
+        }
+    }
+
+    &__image {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        background-color: $secondary-medium;
+
+        @include tablet {
+            height: 3rem;
+            width: 3rem;
+
+        }
+    }
+
+    &__image--main {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        margin-top: 2.25rem;
+    }
+
+    &__image--added {
+        padding: 1rem;
+        margin-top: 1rem;
+
+        @include tablet {
+            margin-top: 1.75rem;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        display: block;
+        padding-top: 1rem;
+        @include label-fontstyle;
+    }
+
+    &__form-field {
+        height: 2.25rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        margin: 0.025rem 0;
+        border: 1px solid $secondary-medium;
+        color: $secondary-dark;
+        font-family: $font-stack;
+
+        @include tablet {
+            height: 3rem;
+            padding: 1rem;
+        }
+    }
+
+    &__form-field::placeholder {
+        color: $primary-dark;
+    }
+
+    &__name-input:focus {
+        outline: solid 1px $secondary-dark;
+    }
+
+
+    &__text-input {
+        height: 6rem;
+        resize: none;
+    }
+
+    &__text-input:focus {
+        outline: solid 1px $secondary-dark;
+    }
+
+    &__button {
+        @include button;
+
+        @include tablet {
+            align-self: flex-end;
+        }
+    }
+
+    &__button:hover {
+        @include button-hover;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            @include contain;
+            width: 30rem;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        font-weight: 400;
+        word-break: break-word;
+
+        @include tablet {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            line-height: 1.5rem;
+        }
+    }
+
+    &__comment-header {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    &__username {
+        font-weight: 600;
+        width: 70%;
+    }
+
+    &__date {
+        color: $primary-medium;
+    }
+}

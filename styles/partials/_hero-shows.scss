@@ -1,0 +1,90 @@
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+
+.hero {
+    &__background-image {
+        background-image: url(../assets/images/hero-shows.jpg);
+        height: 90vw;
+        width: 100%;
+        @include hero-image;
+
+        @include tablet {
+            height: 50vw;
+            background-position: 0 -7rem;
+        }
+    }
+
+    &__background-cover {
+        padding: 1rem 0;
+        height: 90vw;
+        flex-wrap: wrap;
+        @include hero-cover;
+
+        @include tablet {
+            height: 50vw;
+        }
+    }
+
+    &__container {
+        @include desktop {
+            @include contain;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            width: 50%;
+        }
+    }
+
+    &__album {
+        margin: 0 0 1rem 1rem;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        font-weight: 400;
+        color: $primary-light;
+        width: 100%;
+
+        @include tablet {
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+
+    &__heading {
+        width: 75vw;
+        padding-bottom: 1rem;
+        @include hero-heading;
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    &__iframe {
+        width: 18rem;
+        height: 7rem;
+        color: $secondary-light;
+        margin: 0 1rem;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+
+        @include desktop {
+            height: 8rem;
+            width: 25rem;
+        }
+    }
+}
