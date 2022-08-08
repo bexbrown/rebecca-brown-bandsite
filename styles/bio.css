@@ -230,6 +230,11 @@ h4 {
     padding: 1rem;
   }
 }
+@media (min-width: 1280px) {
+  .about {
+    padding: 0;
+  }
+}
 @media (min-width: 1280px) and (min-width: 1280px) {
   .about {
     max-width: 63.75rem;
@@ -241,12 +246,12 @@ h4 {
 }
 @media (min-width: 768px) {
   .about__heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 1280px) {
   .about__heading {
-    margin: 2.25rem 0rem;
+    margin: 3rem 0rem 2.5rem 0;
   }
 }
 @media (min-width: 768px) {

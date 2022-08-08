@@ -89,6 +89,7 @@
         @include desktop {
             height: 8rem;
             width: 25rem;
+            align-self: flex-end;
         }
     }
 }

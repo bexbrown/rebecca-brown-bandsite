@@ -294,6 +294,7 @@ h4 {
   .hero__iframe {
     height: 8rem;
     width: 25rem;
+    align-self: flex-end;
   }
 }
 
@@ -314,17 +315,6 @@ h4 {
     margin: 0 auto;
   }
 }
-@media (min-width: 768px) {
-  .shows__card {
-    margin: 0 1rem 2rem 1rem;
-  }
-}
-@media (min-width: 1280px) {
-  .shows__card {
-    margin: 3rem 0 2rem 0;
-    width: 75%;
-  }
-}
 .shows__header {
   margin: 2rem 1rem 1rem 1rem;
   color: #000000;
@@ -341,16 +331,54 @@ h4 {
   }
 }
 @media (min-width: 768px) {
-  .shows__text-row {
+  .shows__card {
+    margin: 0 1rem 2rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__card {
+    margin: 3rem 0 2rem 0;
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .shows__row {
     display: flex;
     align-items: center;
     padding: 0 1rem;
   }
 }
 @media (min-width: 768px) {
-  .shows__text-row--titles {
+  .shows__row--titles {
     max-width: calc(100% - 15rem);
     justify-content: space-between;
+  }
+}
+.shows__label {
+  margin: 1rem 0 0.25rem 0;
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-size: 0.65rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__label {
+    font-size: 0.75rem;
+  }
+}
+.shows__label--row {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows__label--row {
+    display: block;
+    flex-basis: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .shows__label--col {
+    display: none;
   }
 }
 .shows__row--shows {
@@ -361,39 +389,6 @@ h4 {
 .shows__row--shows:hover {
   background-color: #FAFAFA;
 }
-.shows__row--selected {
-  background-color: #E1E1E1;
-}
-.shows__row--selected:hover {
-  background-color: #E1E1E1;
-}
-.shows__subheader {
-  margin: 1rem 0 0.25rem 0;
-  text-transform: uppercase;
-  color: #AFAFAF;
-  font-size: 0.65rem;
-  line-height: 1.25rem;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .shows__subheader {
-    font-size: 0.75rem;
-  }
-}
-.shows__subheader--row {
-  display: none;
-}
-@media (min-width: 768px) {
-  .shows__subheader--row {
-    display: block;
-    flex-basis: 25%;
-  }
-}
-@media (min-width: 768px) {
-  .shows__subheader--col {
-    display: none;
-  }
-}
 .shows__textbox {
   display: flex;
   flex-direction: column;
@@ -402,6 +397,12 @@ h4 {
   .shows__textbox {
     flex-basis: 25%;
   }
+}
+.shows__row--selected {
+  background-color: #E1E1E1;
+}
+.shows__row--selected:hover {
+  background-color: #E1E1E1;
 }
 .shows__text {
   font-size: 0.8rem;

@@ -38,11 +38,11 @@ const titles = ["Date", "Venue", "Location"];
 // create titles displayed on tablet + desktop
 function createTable(showCards) {
     const showTitles = document.createElement("div");
-    showTitles.classList.add("shows__text-row", "shows__text-row--titles");
+    showTitles.classList.add("shows__row", "shows__row--titles");
 
     for (let i = 0; i < titles.length; i++) {
         const title = document.createElement("span");
-        title.classList.add("shows__subheader", "shows__subheader--row");
+        title.classList.add("shows__label", "shows__label--row");
         title.innerText = titles[i];
         showTitles.appendChild(title);
     }
@@ -53,7 +53,7 @@ function createTable(showCards) {
     for (let i = 0; i < shows.length; i++) {
 
         const card = document.createElement("div");
-        card.classList.add("shows__text-row", "shows__row--shows");
+        card.classList.add("shows__row", "shows__row--shows");
 
 
         //create first textbox
@@ -62,7 +62,7 @@ function createTable(showCards) {
         card.appendChild(textbox);
 
         let subheader = document.createElement("span");
-        subheader.classList.add("shows__subheader", "shows__subheader--col");
+        subheader.classList.add("shows__label", "shows__label--col");
         subheader.innerText = "Date";
         textbox.appendChild(subheader);
 
@@ -77,7 +77,7 @@ function createTable(showCards) {
         card.appendChild(textbox);
 
         subheader = document.createElement("span");
-        subheader.classList.add("shows__subheader", "shows__subheader--col");
+        subheader.classList.add("shows__label", "shows__label--col");
         subheader.innerText = "Venue";
         textbox.appendChild(subheader);
 
@@ -92,7 +92,7 @@ function createTable(showCards) {
         card.appendChild(textbox);
 
         subheader = document.createElement("span");
-        subheader.classList.add("shows__subheader", "shows__subheader--col");
+        subheader.classList.add("shows__label", "shows__label--col");
         subheader.innerText = "Location";
         textbox.appendChild(subheader);
         text = document.createElement("span");

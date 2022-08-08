@@ -19,18 +19,6 @@
         }
     }
 
-    &__card {
-
-        @include tablet {
-            margin: 0 1rem 2rem 1rem;
-        }
-
-        @include desktop {
-            margin: 3rem 0 2rem 0;
-            width: 75%;
-        }
-    }
-
     &__header {
         margin: 2rem 1rem 1rem 1rem;
         color: $secondary-dark;
@@ -45,7 +33,19 @@
         }
     }
 
-    &__text-row {
+    &__card {
+
+        @include tablet {
+            margin: 0 1rem 2rem 1rem;
+        }
+
+        @include desktop {
+            margin: 3rem 0 2rem 0;
+            width: 75%;
+        }
+    }
+
+    &__row {
 
         @include tablet {
             display: flex;
@@ -54,10 +54,30 @@
         }
     }
 
-    &__text-row--titles {
+    &__row--titles {
         @include tablet {
             max-width: calc(100% - 15rem);
             justify-content: space-between;
+        }
+    }
+
+    &__label {
+        margin: 1rem 0 0.25rem 0;
+        @include label-fontstyle;
+
+        &--row {
+            display: none;
+
+            @include tablet {
+                display: block;
+                flex-basis: 25%;
+            }
+        }
+
+        &--col {
+            @include tablet {
+                display: none;
+            }
         }
     }
 
@@ -71,34 +91,6 @@
         background-color: $secondary-light;
     }
 
-    &__row--selected {
-        background-color: $secondary-medium;
-    }
-
-    &__row--selected:hover {
-        background-color: $secondary-medium;
-    }
-
-    &__subheader {
-        margin: 1rem 0 0.25rem 0;
-        @include label-fontstyle;
-    }
-
-    &__subheader--row {
-        display: none;
-
-        @include tablet {
-            display: block;
-            flex-basis: 25%;
-        }
-    }
-
-    &__subheader--col {
-        @include tablet {
-            display: none;
-        }
-    }
-
     &__textbox {
         display: flex;
         flex-direction: column;
@@ -106,6 +98,14 @@
         @include tablet {
             flex-basis: 25%;
         }
+    }
+
+    &__row--selected {
+        background-color: $secondary-medium;
+    }
+
+    &__row--selected:hover {
+        background-color: $secondary-medium;
     }
 
     &__text {
