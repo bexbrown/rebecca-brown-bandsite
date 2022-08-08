@@ -232,7 +232,7 @@ h4 {
 }
 @media (min-width: 1280px) {
   .about {
-    padding: 0;
+    padding: 0 0 1.25rem 0;
   }
 }
 @media (min-width: 1280px) and (min-width: 1280px) {

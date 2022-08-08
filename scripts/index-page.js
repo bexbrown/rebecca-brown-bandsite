@@ -132,13 +132,13 @@ function createInputSection() {
 
 createInputSection();
 
-//form submit
-
 let form = document.querySelector(".comments__form");
 let nameInput = document.querySelector(".comments__name-input");
 let commentInput = document.querySelector(".comments__text-input");
 let commentList = document.querySelector(".comments__container");
 
+
+//reset form fields and required styling
 function formReset() {
     nameInput.value = "";
     commentInput.value = "";
@@ -146,6 +146,7 @@ function formReset() {
     commentInput.classList.remove("comments__input--required");
 };
 
+//input length check and handler
 function checkInputLength() {
 
     if ((nameInput.value.length < 1) || (commentInput.value.length < 1)) {
@@ -170,17 +171,20 @@ function checkInputLength() {
     }
 }
 
+//form submit
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     checkInputLength();
 });
 
+//gets date for comment time stamp
 function getDate() {
     let date = new Date();
     let currentDate = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
     return currentDate;
 }
 
+//creates new comment object with inputs
 function newComment() {
 
     let name = nameInput.value;

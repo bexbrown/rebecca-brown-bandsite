@@ -35,7 +35,7 @@ let shows = [
 let showsEl = document.querySelector(".shows")
 const titles = ["Date", "Venue", "Location"];
 
-// create titles displayed on tablet + desktop
+// create labels displayed on tablet + desktop
 function createTable(showCards) {
     const showTitles = document.createElement("div");
     showTitles.classList.add("shows__row", "shows__row--titles");
@@ -49,12 +49,10 @@ function createTable(showCards) {
     showCards.appendChild(showTitles);
 
     //create card
-
     for (let i = 0; i < shows.length; i++) {
 
         const card = document.createElement("div");
         card.classList.add("shows__row", "shows__row--shows");
-
 
         //create first textbox
         let textbox = document.createElement("div");
@@ -137,9 +135,7 @@ function createContainer() {
 
 createContainer();
 
-
 //row active state status
-
 let rows = document.querySelectorAll(".shows__row--shows");
 
 function removeSelector() {
