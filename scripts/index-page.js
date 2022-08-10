@@ -20,7 +20,7 @@ const commentSection = document.querySelector(".comments");
 let container = document.createElement("div");
 container.classList.add("comments__container");
 
-function displayComments(commentInput) {
+function displayComments(commentsData, i) {
 
     //card
     let card = document.createElement("div");
@@ -45,19 +45,19 @@ function displayComments(commentInput) {
     //comment username
     let username = document.createElement("span");
     username.classList.add("comments__username");
-    username.innerText = commentInput.name;
+    username.innerText = commentsData.name;
     header.appendChild(username);
 
     //date 
     let date = document.createElement("span");
     date.classList.add("comments__date");
-    date.innerText = commentInput.date;
+    date.innerText = getTimeStamp(commentsData.timestamp)
     header.appendChild(date);
 
     //comment text
     let commentText = document.createElement("span");
     commentText.classList.add("comments__comment");
-    commentText.innerText = commentInput.comment;
+    commentText.innerText = commentsData.comment;
     textContainer.appendChild(commentText);
 
     commentSection.appendChild(container);
@@ -124,10 +124,6 @@ function createInputSection() {
 
     //append to comment section
     commentSection.appendChild(container);
-
-    for (let i = 0; i < comments.length; i++) {
-        displayComments(comments[i]);
-    }
 }
 
 createInputSection();
@@ -178,10 +174,52 @@ form.addEventListener("submit", (event) => {
 });
 
 //gets date for comment time stamp
-function getDate() {
-    let date = new Date();
-    let currentDate = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
-    return currentDate;
+// function getDate() {
+//     let date = new Date();
+//     let currentDate = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
+//     return currentDate;
+// }
+
+
+
+//arrays of comment card elements
+let dateEl = document.querySelectorAll(".comments__date");
+let nameEl = document.querySelectorAll(".comments__username");
+let commentEl = document.querySelectorAll(".comments__comment");
+
+
+function getTimeStamp(commentsData) {
+    let seconds = commentsData / 1000;
+
+    switch (true) {
+        case seconds > 883008000:
+            let num = Math.floor(seconds / 883008000);
+            if (num < 2) {
+                return num + " year ago";
+            } else {
+                return num + " years ago";
+            }
+            break;
+        case seconds > 24192000:
+            dateEl.innerText = "";
+            break;
+        case seconds > 604800:
+            dateEl.innerText = "";
+            break;
+        case seconds > 86400:
+            dateEl.innerText = "";
+            break;
+        case seconds > 3600:
+            dateEl.innerText = "";
+            break;
+        case seconds > 60:
+            dateEl.innerText = "";
+            break;
+
+        default:
+            dateEl.innerText = "Just Now";
+    }
+
 }
 
 //creates new comment object with inputs
@@ -189,7 +227,8 @@ function newComment() {
 
     let name = nameInput.value;
     let text = commentInput.value;
-    let date = getDate();
+    // let date = getTimeStamp();
+    // let date = getDate();
 
     let newComment = {
         name: name,
@@ -200,10 +239,40 @@ function newComment() {
     comments.unshift(newComment);
     commentList.innerHTML = "";
 
-    for (let i = 0; i < comments.length; i++) {
-        displayComments(comments[i]);
-    }
 };
+
+const url = "https://project-1-api.herokuapp.com/comments?api_key=";
+const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
+
+axios
+    .get(url + apiKey)
+    .then(response => {
+        let commentsData = response.data;
+
+        for (let i = 0; i < commentsData.length; i++) {
+
+            displayComments(commentsData[i], i);
+
+        }
+    })
+
+axios
+    .post(url + apiKey)
+    .then(response => {
+
+    })
+
+
+
+
+
+
+
+
+
+        // let date = new Date(dateData);
+        // console.log(date);
+
 
 
 

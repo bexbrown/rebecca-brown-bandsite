@@ -1,4 +1,3 @@
-
 let shows = [
     {
         date: "Mon Sept 06 2021",
@@ -154,6 +153,17 @@ function rowSelection() {
 }
 
 rowSelection();
+
+
+const url = "https://project-1-api.herokuapp.com/showdates?api_key=";
+const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
+
+axios
+    .get(url + apiKey)
+    .then(response => {
+        let showsData = response.data;
+        console.log(showsData);
+    })
 
 
 
