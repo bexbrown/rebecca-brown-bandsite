@@ -1,43 +1,12 @@
-let shows = [
-    {
-        date: "Mon Sept 06 2021",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA "
-    },
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    }
-]
 
 let showsEl = document.querySelector(".shows")
-const titles = ["Date", "Venue", "Location"];
 
 // create labels displayed on tablet + desktop
 function createTable(showCards) {
     const showTitles = document.createElement("div");
     showTitles.classList.add("shows__row", "shows__row--titles");
+
+    const titles = ["Date", "Venue", "Location"];
 
     for (let i = 0; i < titles.length; i++) {
         const title = document.createElement("span");
@@ -46,71 +15,6 @@ function createTable(showCards) {
         showTitles.appendChild(title);
     }
     showCards.appendChild(showTitles);
-
-    //create card
-    for (let i = 0; i < shows.length; i++) {
-
-        const card = document.createElement("div");
-        card.classList.add("shows__row", "shows__row--shows");
-
-        //create first textbox
-        let textbox = document.createElement("div");
-        textbox.classList.add("shows__textbox");
-        card.appendChild(textbox);
-
-        let subheader = document.createElement("span");
-        subheader.classList.add("shows__label", "shows__label--col");
-        subheader.innerText = "Date";
-        textbox.appendChild(subheader);
-
-        let text = document.createElement("span");
-        text.classList.add("shows__text", "shows__date");
-        text.innerHTML = shows[i].date;
-        textbox.appendChild(text);
-
-        //create second textbox
-        textbox = document.createElement("div");
-        textbox.classList.add("shows__textbox");
-        card.appendChild(textbox);
-
-        subheader = document.createElement("span");
-        subheader.classList.add("shows__label", "shows__label--col");
-        subheader.innerText = "Venue";
-        textbox.appendChild(subheader);
-
-        text = document.createElement("span");
-        text.classList.add("shows__text");
-        text.innerHTML = shows[i].venue;
-        textbox.appendChild(text);
-
-        //create third textbox {
-        textbox = document.createElement("div");
-        textbox.classList.add("shows__textbox");
-        card.appendChild(textbox);
-
-        subheader = document.createElement("span");
-        subheader.classList.add("shows__label", "shows__label--col");
-        subheader.innerText = "Location";
-        textbox.appendChild(subheader);
-        text = document.createElement("span");
-        text.classList.add("shows__text");
-
-        text.innerHTML = shows[i].location;
-        textbox.appendChild(text);
-
-        //create button
-        let button = document.createElement("span");
-        button.classList.add("shows__button");
-        let link = document.createElement("a");
-        link.classList.add("shows__link");
-        link.innerText = "Buy Tickets";
-        button.appendChild(link);
-
-        card.appendChild(button)
-
-        showCards.appendChild(card)
-    }
-
 }
 
 //Create the card container
@@ -134,25 +38,77 @@ function createContainer() {
 
 createContainer();
 
-//row active state status
-let rows = document.querySelectorAll(".shows__row--shows");
+let cardEl = document.querySelector(".shows__card");
 
-function removeSelector() {
-    rows.forEach((row) => {
-        row.classList.remove("shows__row--selected");
-    })
+//create cards
+function createCards(showData) {
+    console.log(showData);
+    for (let i = 0; i < showData.length; i++) {
+
+        const card = document.createElement("div");
+        card.classList.add("shows__row", "shows__row--shows");
+
+        //create first textbox
+        let textbox = document.createElement("div");
+        textbox.classList.add("shows__textbox");
+        card.appendChild(textbox);
+
+        let subheader = document.createElement("span");
+        subheader.classList.add("shows__label", "shows__label--col");
+        subheader.innerText = "Date";
+        textbox.appendChild(subheader);
+
+        let text = document.createElement("span");
+        text.classList.add("shows__text", "shows__date");
+        text.innerText = showData[i].date;
+        textbox.appendChild(text);
+
+        //create second textbox
+        textbox = document.createElement("div");
+        textbox.classList.add("shows__textbox");
+        card.appendChild(textbox);
+
+        subheader = document.createElement("span");
+        subheader.classList.add("shows__label", "shows__label--col");
+        subheader.innerText = "Venue";
+        textbox.appendChild(subheader);
+
+        text = document.createElement("span");
+        text.classList.add("shows__text");
+        text.innerText = showData[i].place;
+        textbox.appendChild(text);
+
+        //create third textbox {
+        textbox = document.createElement("div");
+        textbox.classList.add("shows__textbox");
+        card.appendChild(textbox);
+
+        subheader = document.createElement("span");
+        subheader.classList.add("shows__label", "shows__label--col");
+        subheader.innerText = "Location";
+        textbox.appendChild(subheader);
+        text = document.createElement("span");
+        text.classList.add("shows__text");
+
+        text.innerText = showData[i].location
+        textbox.appendChild(text);
+
+        //create button
+        let button = document.createElement("span");
+        button.classList.add("shows__button");
+        let link = document.createElement("a");
+        link.classList.add("shows__link");
+        link.innerText = "Buy Tickets";
+        button.appendChild(link);
+
+        card.appendChild(button);
+
+        cardEl.appendChild(card);
+    }
 }
 
-function rowSelection() {
-    rows.forEach((row, index) => {
-        row.addEventListener("click", () => {
-            removeSelector();
-            row.classList.add("shows__row--selected");
-        })
-    })
-}
 
-rowSelection();
+///////////////////////////////////////////////////////////////////////
 
 
 const url = "https://project-1-api.herokuapp.com/showdates?api_key=";
@@ -162,8 +118,28 @@ axios
     .get(url + apiKey)
     .then(response => {
         let showsData = response.data;
-        console.log(showsData);
+        createCards(showsData)
     })
 
+//row active state status
+const rows = document.querySelectorAll(".shows__row--shows");
+console.log(rows);
 
+function removeSelector() {
+    rows.forEach((row) => {
+        row.classList.remove("shows__row--selected");
+    })
+}
 
+function rowSelection() {
+    rows.forEach((row) => {
+        row.addEventListener("click", () => {
+            consolelog("selected")
+            removeSelector();
+            row.classList.add("shows__row--selected");
+
+        })
+    })
+}
+
+rowSelection();
