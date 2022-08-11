@@ -1,5 +1,7 @@
 
-let showsEl = document.querySelector(".shows")
+let showsEl = document.querySelector(".shows");
+const url = "https://project-1-api.herokuapp.com/showdates?api_key=";
+const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
 
 // create labels displayed on tablet + desktop
 function createTable(showCards) {
@@ -35,10 +37,6 @@ function createContainer() {
 
     createTable(showCards);
 }
-
-createContainer();
-
-let cardEl = document.querySelector(".shows__card");
 
 //create cards
 function createCards(showData) {
@@ -107,39 +105,49 @@ function createCards(showData) {
     }
 }
 
-
-///////////////////////////////////////////////////////////////////////
-
-
-const url = "https://project-1-api.herokuapp.com/showdates?api_key=";
-const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
-
 axios
     .get(url + apiKey)
     .then(response => {
         let showsData = response.data;
         createCards(showsData)
     })
+// .catch(error => {
+//     console.log("there was an error loading the shows...")
+// })
+
+
+createContainer();
+
+let cardEl = document.querySelector(".shows__card");
+
+
+
+
+
+
+
+
 
 //row active state status
-const rows = document.querySelectorAll(".shows__row--shows");
-console.log(rows);
+// const rows = document.querySelectorAll(".shows__row--shows");
+// console.log(rows);
 
-function removeSelector() {
-    rows.forEach((row) => {
-        row.classList.remove("shows__row--selected");
-    })
-}
+// function removeSelector() {
+//     rows.forEach((row) => {
+//         row.classList.remove("shows__row--selected");
+//     })
+// }
 
-function rowSelection() {
-    rows.forEach((row) => {
-        row.addEventListener("click", () => {
-            consolelog("selected")
-            removeSelector();
-            row.classList.add("shows__row--selected");
+// function rowSelection() {
+//     rows.forEach((row) => {
+//         row.addEventListener("click", () => {
+//             consolelog("selected")
+//             removeSelector();
+//             row.classList.add("shows__row--selected");
 
-        })
-    })
-}
+//         })
+//     })
+// }
 
-rowSelection();
+
+// rowSelection();

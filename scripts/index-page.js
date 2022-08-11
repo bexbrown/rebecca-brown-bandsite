@@ -1,23 +1,9 @@
-// const comments = [
-//     {
-//         name: "Connor Walton",
-//         date: "02/17/2021",
-//         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-//     },
-//     {
-//         name: "Emilie Beach",
-//         date: "01/09/2021",
-//         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-//     },
-//     {
-//         name: "Miles Acosta",
-//         date: "12/20/2020",
-//         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-//     },
-// ]
+
 const commentSection = document.querySelector(".comments");
 let container = document.createElement("div");
 container.classList.add("comments__container");
+const url = "https://project-1-api.herokuapp.com/comments?api_key=";
+const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
 
 function createInputSection() {
 
@@ -82,9 +68,7 @@ function createInputSection() {
     commentSection.appendChild(container);
 }
 
-createInputSection();
-
-function displayComments(commentsData) {
+function displayComment(commentsData) {
 
     //card
     let card = document.createElement("div");
@@ -92,7 +76,7 @@ function displayComments(commentsData) {
     container.appendChild(card);
 
     //profile image
-    let img = document.createElement("img");
+    let img = document.createElement("div");
     img.classList.add("comments__image", "comments__image--added");
     card.appendChild(img);
 
@@ -128,23 +112,67 @@ function displayComments(commentsData) {
 
 }
 
-const url = "https://project-1-api.herokuapp.com/comments?api_key=";
-const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
-
-getComments();
-
-let form = document.querySelector(".comments__form");
-let nameInput = document.querySelector(".comments__name-input");
-let commentInput = document.querySelector(".comments__text-input");
-let commentList = document.querySelector(".comments__container");
-
-//reset form fields
 function formReset() {
     nameInput.value = "";
     commentInput.value = "";
     nameInput.classList.remove("comments__input--required");
     commentInput.classList.remove("comments__input--required");
 };
+
+function getComments() {
+
+    axios
+        .get(url + apiKey)
+        .then(response => {
+            let commentsData = response.data;
+
+            // timestamps = [];
+
+            commentsData.sort(function (a, b) {
+                return b.timestamp - a.timestamp
+            })
+            console.warn(commentsData);
+
+            for (let i = 0; i < commentsData.length; i++) {
+
+                displayComment(commentsData[i]);
+
+            }
+
+        })
+
+    // .catch(error => {
+    //     console.log("there was an error loading the comments ")
+    // })
+
+}
+
+function postComment(requestBody) {
+
+    axios
+        .post((url + apiKey), requestBody)
+
+        .then(response => {
+
+            let commentData = response.data
+            container.innerHTML = "";
+
+            console.log("this is response data:", commentData);
+            // displayComment(commentData);
+        })
+}
+
+createInputSection();
+
+let form = document.querySelector(".comments__form");
+let nameInput = document.querySelector(".comments__name-input");
+let commentInput = document.querySelector(".comments__text-input");
+let commentList = document.querySelector(".comments__container");
+let dateEl = document.querySelectorAll(".comments__date");
+let nameEl = document.querySelectorAll(".comments__username");
+let commentEl = document.querySelectorAll(".comments__comment");
+
+getComments();
 
 //form submit
 form.addEventListener("submit", (event) => {
@@ -161,44 +189,6 @@ form.addEventListener("submit", (event) => {
     postComment(requestBody);
     formReset();
 });
-
-//arrays of comment card elements
-let dateEl = document.querySelectorAll(".comments__date");
-let nameEl = document.querySelectorAll(".comments__username");
-let commentEl = document.querySelectorAll(".comments__comment");
-
-function getComments() {
-
-    axios
-        .get(url + apiKey)
-        .then(response => {
-            let commentsData = response.data;
-
-            //SORT BY TIMESTAMP!!!!!
-
-            for (let i = 0; i < commentsData.length; i++) {
-
-                displayComments(commentsData[i]);
-
-            }
-        })
-}
-
-function postComment(requestBody) {
-
-    axios
-        .post((url + apiKey), requestBody)
-
-        .then(response => {
-
-            let commentData = response.data
-            container.innerHTML = "";
-            displayComments(commentData);
-            getComments();
-        })
-}
-
-
 
 
 
