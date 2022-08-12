@@ -41,10 +41,12 @@ function createContainer() {
 //create cards
 function createCards(showData) {
     console.log(showData);
+    let rows = [];
     for (let i = 0; i < showData.length; i++) {
 
         const card = document.createElement("div");
         card.classList.add("shows__row", "shows__row--shows");
+        rows.push(card);
 
         //create first textbox
         let textbox = document.createElement("div");
@@ -102,52 +104,57 @@ function createCards(showData) {
         card.appendChild(button);
 
         cardEl.appendChild(card);
+
+
     }
+    rowSelection(rows);
 }
 
-axios
-    .get(url + apiKey)
-    .then(response => {
-        let showsData = response.data;
-        createCards(showsData)
-    })
-// .catch(error => {
-//     console.log("there was an error loading the shows...")
-// })
-
+function getShowData() {
+    axios
+        .get(url + apiKey)
+        .then(response => {
+            let showsData = response.data;
+            createCards(showsData)
+        })
+        .catch(error => {
+            console.log("there was an error loading the shows...")
+        })
+}
 
 createContainer();
+getShowData();
 
 let cardEl = document.querySelector(".shows__card");
 
 
 
+// row active state status
+
+function removeSelector(rows) {
+    rows.forEach((row) => {
+        row.classList.remove("shows__row--selected");
+    })
+}
+
+function rowSelection(rows) {
+    rows.forEach((row) => {
+        row.addEventListener("click", () => {
+            removeSelector(rows);
+            row.classList.add("shows__row--selected");
+
+        })
+    })
+}
 
 
 
 
 
 
-//row active state status
-// const rows = document.querySelectorAll(".shows__row--shows");
-// console.log(rows);
-
-// function removeSelector() {
-//     rows.forEach((row) => {
-//         row.classList.remove("shows__row--selected");
-//     })
-// }
-
-// function rowSelection() {
-//     rows.forEach((row) => {
-//         row.addEventListener("click", () => {
-//             consolelog("selected")
-//             removeSelector();
-//             row.classList.add("shows__row--selected");
-
-//         })
-//     })
-// }
 
 
-// rowSelection();
+
+
+
+
