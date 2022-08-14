@@ -110,11 +110,10 @@
 
     &__text {
         font-size: 0.8rem;
-        font-weight: 600;
     }
 
     &__date {
-        font-weight: 700;
+        font-weight: 600;
     }
 
     &__button {
@@ -123,5 +122,20 @@
 
     &__button:hover {
         @include button-hover;
+    }
+
+
+    &__error {
+        display: block;
+        padding: 0 0 1rem 1rem;
+
+        @include tablet {
+            padding: 0 0 2rem 2rem;
+        }
+
+        @include desktop {
+            padding-bottom: 3rem;
+            @include contain;
+        }
     }
 }

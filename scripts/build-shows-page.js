@@ -1,7 +1,7 @@
-
 let showsEl = document.querySelector(".shows");
 const url = "https://project-1-api.herokuapp.com/showdates?api_key=";
 const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
+
 
 // create labels displayed on tablet + desktop
 function createTable(showCards) {
@@ -38,9 +38,23 @@ function createContainer() {
     createTable(showCards);
 }
 
+function createTimestamp(timeData) {
+
+    let newDate = new Date(timeData).toDateString();
+
+    //add "t" on end of sept month
+    if (newDate[4] === "S") {
+        let date1 = newDate.slice(0, 7);
+        let date2 = newDate.slice(8)
+
+        return date1 + "t " + date2;
+    }
+
+    return newDate;
+}
+
 //create cards
 function createCards(showData) {
-    console.log(showData);
     let rows = [];
     for (let i = 0; i < showData.length; i++) {
 
@@ -60,7 +74,7 @@ function createCards(showData) {
 
         let text = document.createElement("span");
         text.classList.add("shows__text", "shows__date");
-        text.innerText = showData[i].date;
+        text.innerText = createTimestamp(showData[i].date);
         textbox.appendChild(text);
 
         //create second textbox
@@ -104,9 +118,8 @@ function createCards(showData) {
         card.appendChild(button);
 
         cardEl.appendChild(card);
-
-
     }
+
     rowSelection(rows);
 }
 
@@ -118,7 +131,11 @@ function getShowData() {
             createCards(showsData)
         })
         .catch(error => {
-            console.log("there was an error loading the shows...")
+            console.error("Error:", error);
+            let errorMessage = document.createElement("span");
+            errorMessage.innerText = "There was an error loading the shows..."
+            errorMessage.classList.add("shows__error")
+            showsEl.appendChild(errorMessage);
         })
 }
 
@@ -127,10 +144,7 @@ getShowData();
 
 let cardEl = document.querySelector(".shows__card");
 
-
-
 // row active state status
-
 function removeSelector(rows) {
     rows.forEach((row) => {
         row.classList.remove("shows__row--selected");
@@ -142,7 +156,6 @@ function rowSelection(rows) {
         row.addEventListener("click", () => {
             removeSelector(rows);
             row.classList.add("shows__row--selected");
-
         })
     })
 }

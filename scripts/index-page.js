@@ -2,6 +2,7 @@
 const commentSection = document.querySelector(".comments");
 let container = document.createElement("div");
 container.classList.add("comments__container");
+
 const url = "https://project-1-api.herokuapp.com/comments?api_key=";
 const apiKey = "9e60fcc9-dfb8-4c05-9dd2-617a77fdbfa1";
 
@@ -68,6 +69,23 @@ function createInputSection() {
     commentSection.appendChild(container);
 }
 
+function createTimestamp(timeData) {
+    let newDate = new Date(timeData);
+    let month = newDate.getMonth() + 1;
+    let day = newDate.getDate();
+    let year = newDate.getFullYear();
+
+    if (month < 10) {
+        month = "0" + month;
+    }
+    if (day < 10) {
+        day = "0" + day;
+    }
+
+
+    return month + "/" + day + "/" + year;
+}
+
 function displayComment(commentsData) {
 
     //card
@@ -99,7 +117,7 @@ function displayComment(commentsData) {
     //date 
     let date = document.createElement("span");
     date.classList.add("comments__date");
-    date.innerText = commentsData.timestamp;
+    date.innerText = createTimestamp(commentsData.timestamp);
     header.appendChild(date);
 
     //comment text
@@ -109,7 +127,6 @@ function displayComment(commentsData) {
     textContainer.appendChild(commentText);
 
     commentSection.appendChild(container);
-
 }
 
 function formReset() {
@@ -124,42 +141,65 @@ function getComments() {
     axios
         .get(url + apiKey)
         .then(response => {
+            container.innerHTML = "";
             let commentsData = response.data;
-
-            // timestamps = [];
 
             commentsData.sort(function (a, b) {
                 return b.timestamp - a.timestamp
             })
-            console.warn(commentsData);
 
             for (let i = 0; i < commentsData.length; i++) {
-
                 displayComment(commentsData[i]);
-
             }
-
         })
 
-    // .catch(error => {
-    //     console.log("there was an error loading the comments ")
-    // })
+        .catch(error => {
+            console.log("Error:", error);
+            form = document.querySelector(".comments__form");
+            let errorMessage = document.createElement("span");
+            errorMessage.innerText = "There was an error loading the shows..."
+            errorMessage.classList.add("comments__error")
+            form.appendChild(errorMessage);
 
+        })
 }
 
 function postComment(requestBody) {
 
     axios
         .post((url + apiKey), requestBody)
-
         .then(response => {
+            let commentData = response.data;
+            getComments();
 
-            let commentData = response.data
-            container.innerHTML = "";
-
-            console.log("this is response data:", commentData);
-            // displayComment(commentData);
         })
+        .catch(error => {
+            console.log("Error:", error);
+
+        })
+}
+
+function inputValidation(nameInput, commentInput, requestBody) {
+
+    if ((nameInput.value.length < 1) || (commentInput.value.length < 1)) {
+
+        //check name length 
+        if (nameInput.value.length < 1) {
+            nameInput.classList.add("comments__input--required");
+        } else {
+            nameInput.classList.remove("comments__input--required");
+        }
+
+        //check comment length {
+        if (commentInput.value.length < 1) {
+            commentInput.classList.add("comments__input--required");
+        } else {
+            commentInput.classList.remove("comments__input--required");
+        }
+    } else {
+        postComment(requestBody);
+        formReset();
+    }
 }
 
 createInputSection();
@@ -178,94 +218,17 @@ getComments();
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // checkInputLength;
-
     let requestBody =
     {
         "name": nameInput.value,
         "comment": commentInput.value,
     }
 
-    postComment(requestBody);
-    formReset();
+    inputValidation(nameInput, commentInput, requestBody);
+
 });
 
 
-
-
-
-
-
-
-// let date = new Date(dateData);
-// console.log(date);
-
-//gets date for comment time stamp
-// function getDate() {
-//     let date = new Date();
-//     let currentDate = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
-//     return currentDate;
-// }
-
-
-
-// function getTimeStamp(commentsData) {
-//     console.log("this is commentsData in getTimeStamp:", commentsData);
-//     let seconds = commentsData / 1000;
-
-//     switch (true) {
-//         case seconds > 883008000:
-//             let num = Math.floor(seconds / 883008000);
-//             if (num < 2) {
-//                 return num + " year ago";
-//             } else {
-//                 return num + " years ago";
-//             }
-//         case seconds > 24192000:
-//             dateEl.innerText = "";
-//             break;
-//         case seconds > 604800:
-//             dateEl.innerText = "";
-//             break;
-//         case seconds > 86400:
-//             dateEl.innerText = "";
-//             break;
-//         case seconds > 3600:
-//             dateEl.innerText = "";
-//             break;
-//         case seconds > 60:
-//             dateEl.innerText = "";
-//             break;
-
-//         default:
-//             dateEl.innerText = "Just Now";
-//     }
-
-// }
-
-
-//input length check and handler
-// function checkInputLength() {
-//     if ((nameInput.value.length < 1) || (commentInput.value.length < 1)) {
-//         //check name length 
-//         if (nameInput.value.length < 1) {
-//             nameInput.classList.add("comments__input--required");
-//         } else {
-//             nameInput.classList.remove("comments__input--required");
-//         }
-
-//         //check comment length {
-//         if (commentInput.value.length < 1) {
-//             commentInput.classList.add("comments__input--required");
-
-//         } else {
-//             commentInput.classList.remove("comments__input--required");
-//         }
-//     } else {
-//         //newComment();
-//         // postComment(requestBody);
-//     }
-// }
 
 
 

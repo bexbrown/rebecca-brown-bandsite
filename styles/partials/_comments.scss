@@ -62,12 +62,12 @@
         @include tablet {
             height: 3rem;
             width: 3rem;
-
         }
     }
 
     &__image--main {
         background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-size: cover;
         margin-top: 2.25rem;
     }
 
@@ -180,5 +180,13 @@
 
     &__date {
         color: $primary-medium;
+    }
+
+    &__error {
+        padding: 1rem 0;
+
+        @include tablet {
+            margin: 1.5rem auto;
+        }
     }
 }
